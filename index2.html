@@ -1,0 +1,1188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!-- aos animation link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <!-- fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <style>
+    /* .bg-header{
+        background-image: url(images/bg-new.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        /*background: linear-gradient(to bottom, #121212, #333333);*/
+        color: white;
+        font-family: Arial, sans-serif;
+        background-size: 100% 100%;
+        height: 100vh;
+    } */
+
+
+    .headercontent{margin-top: 10%;}
+    .vh-90{
+        height: 90vh;
+    }
+    .font-1{
+        font-family: "Karla", serif;
+        font-weight: 800;
+    }
+    .w-7{
+        width: 7%;
+    }
+    .withsep::after {
+        content: "";
+        width: 25px;
+        position: absolute;
+        height: 72px;
+        right: 0;
+        top: 33%;
+        background: url(images/line-1-0-2-1.png) no-repeat;
+    }
+    .bg-silver{background-color: #949597; color: #fff;border: none;}
+    .bg-yellow{background-color: #F5DD4C;}
+    .quotebtn:hover{background-color:#F5DD4C; }
+    .border-yellow,.border-start{border-color: #F5DD4C !important;}
+    .text-yellow{color: #F5DD4C;}
+     /* Ensure dropdown alignment */
+        .dropdown-menu {
+            min-width: 250px;
+        }
+
+        /* Submenu positioning */
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        /* Default: Submenu opens to the right */
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-left: 0.1rem;
+            display: none;
+            position: absolute;
+        }
+
+        /* Right arrow for submenu indication */
+        .dropdown-submenu > a::after {
+            content: " ►"; /* Right arrow */
+            float: right;
+            font-size: 12px;
+        }
+
+        /* On mobile, submenu opens downward instead of right */
+        @media (max-width: 991px) {
+            .dropdown-submenu .dropdown-menu {
+                left: 0;
+                position: relative;
+            }
+
+            /* Change arrow direction to ▼ for mobile */
+            .dropdown-submenu > a::after {
+                content: " ▼"; /* Downward arrow */
+            }
+        }
+
+        .training-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 80px 0;
+        }
+        .training-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+        .training-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .training-desc {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        .service-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-icon {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .service-text {
+            font-size: 1rem;
+            color: #555;
+        }
+        .line-height-30{
+            line-height: 30px;
+        }
+
+        .second-life-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 80px 0;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .content-image {
+            flex: 1;
+            text-align: center;
+        }
+        .content-image img {
+            max-width: 90%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .content-text {
+            flex: 1;
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .section-desc {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .feature-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .cta-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .cta-btn {
+            background: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease-in-out;
+        }
+        .cta-btn:hover {
+            background: #0056b3;
+        }
+        .bg-header {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Make the height full-screen */
+            overflow: hidden;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Make the video cover the entire container */
+            z-index: -1; /* Send the video behind other content */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.5; /* Add a black overlay with opacity */
+            z-index: 0;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 1; /* Bring the header content above the video and overlay */
+        }
+        .navbar{background: #000;}
+        .carousel-inner {
+            height: 600px; /* Set fixed height */
+        }
+
+        .carousel-item {
+            height: 100%; /* Ensure each slide takes full height */
+        }
+
+        .carousel-item img,
+        .carousel-item video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover; /* Crop and fit the video within the container */
+        }
+  </style>
+  <!-- CSS for Dark Overlay -->
+<style>
+/* Banner Styling */
+.welcome-banner {
+    position: absolute;
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);  Semi-transparent background 
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.welcome-banner2 {
+    position: absolute;
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background: rgba(59, 59, 59, 0.7);  Semi-transparent background 
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.welcome-banner3 {
+    position: absolute;
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background: rgba(99, 99, 99, 0.7);  Semi-transparent background 
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.welcome-banner4 {
+    position: absolute;
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background: rgba(34, 34, 34, 0.7);  Semi-transparent background 
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+/*.banner-container {
+    width: 100%;
+    overflow: hidden;
+    color: white;
+    padding: 10px 0;
+    position: relative;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.7); 
+}*/
+.scrolling-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollText 25s linear infinite; /* Slow speed */
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+/*.welcome-banner p{max-width: 1000px;margin: 0 auto;}*/
+/* Fade-in effect */
+.fade-in {
+    opacity: 1 !important;
+}
+
+/* Fade-out effect */
+.fade-out {
+    opacity: 0 !important;
+}
+
+/* Ensure the carousel container is positioned relative */
+#promoCarousel {
+    position: relative;
+}
+</style>
+  <body>
+    <!-- header -->
+    <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand col-6 col-md-4 col-lg-3 col-xl-2" href="index.html"><img src="images/logo.png" alt="SolidForgeLogo_RGB_Red" class="w-100"></a>
+                <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Center the navbar items -->
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <!-- Home Item (No Dropdown) -->
+                        <li class="nav-item">
+                            <a class="nav-link text-white active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                         <!-- Products -->
+                        <li class="nav-item dropdown" data-bs-auto-close="outside">
+                            <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownManufacturing" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Products
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownManufacturing">
+                                <!-- <li><a class="dropdown-item" href="#">Selective Laser Sintering (SLS)</a></li>
+                                <li><a class="dropdown-item" href="#">Binder Jetting</a></li>
+                                <li><a class="dropdown-item" href="#">Multi Jet Fusion (MJF)</a></li> -->
+
+                                <!-- Submenu with Click-to-Open -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item submenu-toggle" href="#">Flashforge Brand</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item bg-warning text-white" href="#">Products 3D Printers</a></li>
+                                        <li><a class="dropdown-item" href="#">Flashforge 510</a></li>
+                                        <li><a class="dropdown-item" href="#">Flashforge 400</a></li>
+                                        <li><a class="dropdown-item" href="#">Flashforge Material Wax</a></li>
+                                        <li><a class="dropdown-item" href="#">Flashforge Software WaxJetPrint</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Submenu with Click-to-Open -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item submenu-toggle" href="#">Solidscape Brand</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item bg-warning" href="#">Products 3D Printers</a></li>
+                                        <li><a class="dropdown-item" href="#">Solidscape S3Duo</a></li>
+                                        <li><a class="dropdown-item" href="#">Solidscape S325</a></li>
+                                        <li><a class="dropdown-item" href="#">Solidscape Muse</a></li>
+                                        <li><a class="dropdown-item" href="#">Solidscape Muse Plus</a></li>
+                                        <li><a class="dropdown-item" href="#">Solidscape Material Midas</a></li>
+                                        <li><a class="dropdown-item" href="#">Solidscape Material Melt</a></li>
+                                        <li><a class="dropdown-item" href="#">Solidscape Software ModelWorks</a></li>
+                                    </ul>
+                                </li>
+
+                                 <!-- Submenu with Click-to-Open -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item submenu-toggle" href="#">Hispana Brand</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item bg-warning" href="#">Polishing Machine</a></li>
+                                        <li><a class="dropdown-item" href="#">GPG-10</a></li>
+                                        <li><a class="dropdown-item" href="#">EN-34</a></li>
+                                        <li><a class="dropdown-item" href="#">EN-44</a></li>
+                                        <li><a class="dropdown-item" href="#">EN-442</a></li>
+                                    </ul>
+                                </li>
+
+                                 <!-- Submenu with Click-to-Open -->
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item submenu-toggle" href="#">GPA INNOVA Brand</a>
+                                    <ul class="dropdown-menu">
+                                        <!-- <li><a class="dropdown-item bg-warning" href="#">Polishing Machine</a></li> -->
+                                        <li><a class="dropdown-item" href="#">MURUA Gold</a></li>
+                                        <li><a class="dropdown-item" href="#">MURUA Silver</a></li>
+                                        <li><a class="dropdown-item" href="#">MURUA Universal</a></li>
+                                        <li><a class="dropdown-item" href="#">PRO 10 Platinum</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- <li><a class="dropdown-item" href="#">Fused Deposition Modeling (FDM)</a></li> -->
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown hover-dropdown">
+                            <a class="nav-link text-white" href="installation.html">
+                                Installation & Training
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown hover-dropdown">
+                            <a class="nav-link text-white" href="#second-life">
+                                Second life
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown hover-dropdown">
+                            <a class="nav-link text-white" href="#support">
+                                Support
+                            </a>
+                        </li>
+                        
+                       
+                        <!-- Manufacturing Dropdown -->
+                        <!-- <li class="nav-item dropdown hover-dropdown">
+                            <a class="nav-link text-white" href="#" id="navbarDropdownManufacturing" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Manufacturing
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownManufacturing">
+                                <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                <li><a class="dropdown-item" href="#">Option 3</a></li>
+                            </ul>
+                        </li> -->
+        
+                        <!-- Materials Dropdown -->
+                      <!--   <li class="nav-item dropdown hover-dropdown">
+                            <a class="nav-link text-white" href="#" id="navbarDropdownMaterials" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Materials
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMaterials">
+                                <li><a class="dropdown-item" href="#">Material 1</a></li>
+                                <li><a class="dropdown-item" href="#">Material 2</a></li>
+                                <li><a class="dropdown-item" href="#">Material 3</a></li>
+                            </ul>
+                        </li> -->
+        
+                        <!-- Industries Dropdown -->
+                        <!-- <li class="nav-item dropdown hover-dropdown">
+                            <a class="nav-link text-white" href="#" id="navbarDropdownIndustries" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Industries
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownIndustries">
+                                <li><a class="dropdown-item" href="#">Industry 1</a></li>
+                                <li><a class="dropdown-item" href="#">Industry 2</a></li>
+                                <li><a class="dropdown-item" href="#">Industry 3</a></li>
+                            </ul>
+                        </li> -->
+        
+                        
+                    </ul>
+                    <!-- Align buttons to the right -->
+                    <div class="d-flex ms-auto"> 
+                        <a class="btn bg-silver quotebtn mx-3" href="contact.html">Get a Quote</a>
+                        <button class="btn btn-outline-light">sign in</button>
+                        <!-- Shopping Cart Icon -->
+                        <button class="btn btn-outline-light ms-2">
+                            <svg class="h-100 me-4" fill="#ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 287.755 287.755" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M134.16,279.13c-15.24,0-26.715-12.31-26.715-27.544c0-15.162,11.475-26.638,26.715-26.638 c15.162,0,27.472,11.476,27.472,26.638C161.626,266.821,149.316,279.13,134.16,279.13z"></path> <path d="M265.515,176.575c-1.682,7.085-2.275,19.503-6.762,25.244c-2.708,3.465-6.773,5.626-11.943,5.626H92.21 c-9.962,0-18.056-8.022-18.056-18.003c0-6.461-18.507-98.199-25.497-132.633c-1.453-7.146-8.551-12.995-15.834-13.061 l-14.711-0.141c-19.786,0-18.075-18.774-18.075-18.774c0.384-6.626,2.642-10.581,5.434-12.911 c5.597-4.668,18.231-3.008,25.347-3.02l12.874-0.024c22.146,0,30.883,12.661,34.317,22.929c2.312,6.917,3.495,18.735,5.05,25.857 l22.104,100.829c1.561,7.122,8.737,12.893,16.021,12.893H222.31c7.29,0,14.412-5.771,15.907-12.91l16.507-78.486 c2.132-9.217,5.566-13.627,9.086-15.501c6.425-3.444,19.882,1.63,22.416,8.455c3.759,10.157-0.595,27.37-0.595,27.37 S272.691,146.484,265.515,176.575z"></path> <path d="M224.382,279.13c-15.18,0-26.649-12.31-26.649-27.544c0-15.162,11.47-26.638,26.649-26.638 c15.162,0,27.525,11.476,27.525,26.638C251.908,266.821,239.544,279.13,224.382,279.13z"></path> <path d="M135.085,153.335c-4.984,0-9.025-4.053-9.025-9.043c0-4.978,4.042-9.031,9.025-9.031c4.996,0,9.031,4.053,9.031,9.031 C144.116,149.283,140.087,153.335,135.085,153.335z"></path> <path d="M171.209,153.335c-4.983,0-9.024-4.053-9.024-9.043c0-4.978,4.041-9.031,9.024-9.031c4.979,0,9.031,4.053,9.031,9.031 C180.241,149.283,176.188,153.335,171.209,153.335z"></path> <path d="M207.323,153.335c-4.99,0-9.031-4.053-9.031-9.043c0-4.978,4.041-9.031,9.031-9.031c4.978,0,9.025,4.053,9.025,9.031 C216.348,149.283,212.3,153.335,207.323,153.335z"></path> <path d="M117.022,117.21c-4.972,0-9.037-4.035-9.037-9.021c0-4.981,4.065-9.035,9.037-9.035c5.008,0,9.043,4.053,9.043,9.035 C126.06,113.175,122.024,117.21,117.022,117.21z"></path> <path d="M153.147,99.161c4.984,0,9.025,4.044,9.025,9.028c0,4.986-4.041,9.028-9.025,9.028c-4.989,0-9.031-4.042-9.031-9.028 C144.116,103.205,148.158,99.161,153.147,99.161z"></path> <path d="M189.266,99.161c4.984,0,9.025,4.044,9.025,9.028c0,4.986-4.041,9.028-9.025,9.028c-4.99,0-9.031-4.042-9.031-9.028 C180.235,103.205,184.276,99.161,189.266,99.161z"></path> <path d="M225.379,99.161c4.983,0,9.024,4.044,9.024,9.028c0,4.986-4.041,9.028-9.024,9.028c-4.99,0-9.031-4.042-9.031-9.028 C216.348,103.205,220.389,99.161,225.379,99.161z"></path> <path d="M207.323,81.104c-4.99,0-9.031-4.053-9.031-9.022c0-4.993,4.041-9.031,9.031-9.031c4.978,0,9.025,4.032,9.025,9.031 C216.348,77.051,212.3,81.104,207.323,81.104z"></path> <path d="M171.209,81.104c-4.983,0-9.024-4.053-9.024-9.022c0-4.993,4.041-9.031,9.024-9.031c4.979,0,9.031,4.032,9.031,9.031 C180.241,77.051,176.188,81.104,171.209,81.104z"></path> <path d="M135.085,81.104c-4.984,0-9.025-4.053-9.025-9.022c0-4.993,4.042-9.031,9.025-9.031c4.996,0,9.031,4.032,9.031,9.031 C144.116,77.051,140.087,81.104,135.085,81.104z"></path> </g> </g></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </nav>
+   
+ 
+<!-- Bootstrap Carousel -->
+<div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
+    
+    <!-- Welcome Banner (Fixed on Top of Every Slide) -->
+    <div id="welcomeBanner" class="welcome-banner2 banner-container fade-in">
+        <!-- <h1 class="fw-bold text-white">Welcome to Solidforge</h1> -->
+        <p class="lead text-white scrolling-text mt-2">
+           <b>Welcome to Solidforge:</b> Your go-to source for premium 3D printers, polishing solutions, and 3D software. 
+            Whether you're a manufacturer, designer, or innovator, we have the tools to help bring 
+            your ideas to life with precision and quality.
+        </p>
+    </div>
+
+
+
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+
+    <!-- Carousel Inner -->
+    <div class="carousel-inner">
+        <!-- First Slide -->
+        <!-- <div class="carousel-item active">
+            <img src="images/industrymachine.jpg" class="d-block w-100" alt="Dummy Banner">
+        </div> -->
+
+        <!-- Second Slide (Promotional Video 1) -->
+        <div class="carousel-item active">
+            <video class="d-block w-100" autoplay muted loop>
+                <source src="images/promotion1.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Third Slide (Promotional Video 2) -->
+        <div class="carousel-item">
+            <video class="d-block w-100" autoplay muted loop>
+                <source src="images/promotion2.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+   
+
+    <!-- Manufacturing cards -->
+    <!-- <div class="container-fluid py-5">
+        <div class="row">
+            <div class="col-12 col-lg-11 mx-auto py-5">
+                <h2 class="mb-5 font-1">Why Additive Manufacturing?</h2>
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-6 mx-auto d-flex justify-content-between">
+                                <img src="images/icon-1.png" data-aos="flip-left" data-aos-duration="2000" class="w-100" alt="icon-1">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title font-1">Reduce Assembly Time</h5>
+                                <p class="card-text">Don’t waste time putting products together! Rely on 3D printing to make complex geometries that can be printed as one piece—or consolidated in one build.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-6 mx-auto d-flex justify-content-between">
+                                <img src="images/icon-2.png" data-aos="flip-left" data-aos-duration="2000" class="w-100" alt="icon-1">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title font-1">Reduce Assembly Time</h5>
+                                <p class="card-text">Don’t waste time putting products together! Rely on 3D printing to make complex geometries that can be printed as one piece—or consolidated in one build.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-6 mx-auto d-flex justify-content-between">
+                                <img src="images/icon-3.png" data-aos="flip-left" data-aos-duration="2000" class="w-100" alt="icon-1">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title font-1">Reduce Assembly Time</h5>
+                                <p class="card-text">Don’t waste time putting products together! Rely on 3D printing to make complex geometries that can be printed as one piece—or consolidated in one build.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Rates section -->
+    <div class="container-fluid px-0 bg-black" data-aos="fade" data-aos-duration="1500">
+        <div class="col-9 mx-auto">
+            <div class="row">
+                <div class="col-12 col-lg-3 my-3 position-relative pt-5 pb-4 ps-4">
+                    <div class="withsep text-white">
+                        <h3 class="font-1 fs-1 fw-semibold mb-1">24M 
+                            <sup>+</sup>
+                        </h3>
+                        <p>Parts Manufactured</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 my-3 position-relative pt-5 pb-4 ps-4">
+                    <div class="withsep text-white">
+                        <h3 class="font-1 fs-1 fw-semibold mb-1">12
+                        </h3>
+                        <p>Additive Technologies</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 my-3 position-relative pt-5 pb-4 ps-4">
+                    <div class="withsep text-white">
+                        <h3 class="font-1 fs-1 fw-semibold mb-1">180 
+                            <sup>+</sup>
+                        </h3>
+                        <p>Countries Shipped</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 my-3 position-relative pt-5 pb-4 ps-4">
+                    <div class="withsep text-white">
+                        <h3 class="font-1 fs-1 fw-semibold mb-1">1M 
+                            <sup>+</sup>
+                        </h3>
+                        <p>Countries Shipped</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Cutting cards -->
+    <!-- <div class="container-fluid pt-5 pb-3 bg-body-secondary">
+        <div class="row">
+            <div class="col-12 col-lg-11 mx-auto py-5">
+                <h2 class=" font-1">Flashforge Brand</h2>
+                <p>Products 3D Printers:</p>
+                <div class="row">
+                    <div class="col-12 col-lg-3 my-3">
+                        <div class="card border-0">
+                            <img src="images/waxjet 510.35.png" data-aos="zoom-in" data-aos-duration="2000" class="card-img-top h-50" height="100px" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title font-1">Flashforge 510</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3 my-3">
+                        <div class="card border-0">
+                            <img src="images/product-2.webp" data-aos="zoom-in" data-aos-duration="2000" class="card-img-top h-50" height="100px" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title font-1">Flashforge 400</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3 my-3">
+                        <div class="card border-0">
+                            <img src="images/product-3.webp" data-aos="zoom-in" data-aos-duration="2000" class="card-img-top h-50" height="100px" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title font-1">Flashforge Material Wax</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3 my-3">
+                        <div class="card border-0">
+                            <img src="images/products-4.webp" data-aos="zoom-in" data-aos-duration="2000" class="card-img-top h-50" height="100px" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title font-1">Flashforge Software WaxJetPrint</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Our Services cards -->
+    <!-- <div class="container-fluid py-5">
+        <div class="row">
+            <div class="col-12 col-lg-11 mx-auto py-5">
+                <h2 class="mb-5 font-1">Solidscape Brand</h2>
+                <p>Products 3D Printers: </p>
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="images/product-5.avif" class="w-100" alt="icon-1">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title font-1">Solidscape S3Duo</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="images/product-5.avif" class="w-100" alt="Solidscape S325">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title font-1">Solidscape S325</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="images/product-5.avif" class="w-100" alt="Solidscape Muse">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title font-1">Solidscape Muse</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="images/product-5.avif" class="w-100" alt="Solidscape Muse Plus">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title font-1">Solidscape Muse Plus</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="images/product-5.avif" class="w-100" alt="Solidscape Material Midas">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title font-1">Solidscape Material Midas</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="images/product-5.avif" class="w-100" alt="Solidscape Material Melt">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title font-1">Solidscape Material Melt</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="images/product-5.avif" class="w-100" alt="Solidscape Software ModelWorks">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title font-1">Solidscape Software ModelWorks</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="container-fluid pt-5 pb-3 bg-body-secondary">
+        <div class="row">
+            <div class="col-12 col-lg-11 mx-auto py-5">
+                <h2 class=" font-1">GPA INNOVA Brand</h2>
+                <div class="row">
+                    <div class="col-12 col-lg-3 my-3">
+                        <div class="card border-0">
+                            <img src="" data-aos="zoom-in" data-aos-duration="2000" class="card-img-top h-50" height="100px" alt="MURUA Gold">
+                            <div class="card-body">
+                                <h5 class="card-title font-1">MURUA Gold</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3 my-3">
+                        <div class="card border-0">
+                            <img src="" data-aos="zoom-in" data-aos-duration="2000" class="card-img-top h-50" height="100px" alt="MURUA Silver">
+                            <div class="card-body">
+                                <h5 class="card-title font-1">MURUA Silver</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3 my-3">
+                        <div class="card border-0">
+                            <img src="" data-aos="zoom-in" data-aos-duration="2000" class="card-img-top h-50" height="100px" alt="MURUA Universal">
+                            <div class="card-body">
+                                <h5 class="card-title font-1">MURUA Universal</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3 my-3">
+                        <div class="card border-0">
+                            <img src="" data-aos="zoom-in" data-aos-duration="2000" class="card-img-top h-50" height="100px" alt="PRO 10 Platinum">
+                            <div class="card-body">
+                                <h5 class="card-title font-1">PRO 10 Platinum</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Materials cards -->
+    <!-- <div class="container-fluid py-5">
+        <div class="row">
+            <div class="col-11 mx-auto py-5">
+                    <h2 class=" font-1">Hispana Brand</h2>
+                    <p>Polishing Machine:</p>
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="" class="w-100" alt="GPG-10">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title font-1">GPG-10</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="" class="w-100" alt="EN-34">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title font-1">EN-34</h5>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="" class="w-100" alt="EN-44">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title font-1">EN-44</h5>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="" class="w-100" alt="EN-442">
+                            </div>
+                            <div class="card-body px-0">
+                                <h5 class="card-title font-1">EN-442</h5>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <section class="second-life-section" id="second-life" data-aos="fade" data-aos-duration="900">
+        <div class="container">
+            <div class="content-wrapper" data-aos="zoom-out" data-aos-duration="1500">
+                <!-- Image Section -->
+                <div class="col-12 col-md-4">
+                    <img src="images/second-life.jpg" alt="Certified Second Life Machine" class="w-100 rounded">
+                </div>
+
+                <!-- Text Content -->
+                <div class="col-12 col-md-8 ps-md-5 mt-4 mt-md-0">
+                    <h2 class="section-title">Certified Second Life Machines</h2>
+                    <p class="section-desc">
+                        Solidforge offers a range of Certified Second Life Machines, providing a cost-effective solution 
+                        for businesses looking to leverage high-quality 3D printing technology without the expense of brand-new equipment.
+                    </p>
+                    <p class="section-desc">
+                        Each machine undergoes a thorough **inspection, refurbishment, and testing** process to ensure it meets 
+                        our stringent performance and reliability standards.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="row g-4 mt-4" data-aos="slide-up" data-aos-duration="1500">
+                <div class="col-md-4 d-flex">
+                    <div class="feature-card p-4">
+                        <h4 class="feature-title"><i class="fas fa-cogs feature-icon"></i> Rigorous Inspection</h4>
+                        <p>
+                            Every machine is tested, calibrated, and optimized with original components to ensure superior performance.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="feature-card p-4">
+                        <h4 class="feature-title"><i class="fas fa-check-circle feature-icon"></i> Certified & Warrantied</h4>
+                        <p>
+                            Comes with a warranty, preventive maintenance, and full technical support for reliability.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="feature-card p-4">
+                        <h4 class="feature-title"><i class="fas fa-hourglass-half feature-icon"></i> Limited Availability</h4>
+                        <p>
+                            Supplies are limited and move fast—check regularly for updated availability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section" data-aos="fade" data-aos-duration="1600">
+                <p class="section-desc fw-semibold">
+                    Don't miss out on these **high-demand** Second Life Machines. Contact us to check availability now!
+                </p>
+                <a href="#" class="btn btn-warning text-white fw-semibold px-4 py-2">Check Availability</a>
+            </div>
+        </div>
+    </section>
+    <div class="container-fluid bg-black pb-5" id="support" data-aos="zoom-in" data-aos-duration="1500">
+        <div class="col-9 mx-auto pt-5">
+            <h2 class="text-warning text-center mb-5">Solidforge After-Sales, Preventive Maintenance, Repair, Online Support, and On-Site Support Services</h2>
+            <p class="text-white line-height-30">At Solidforge, our commitment to customer satisfaction extends well beyond the initial purchase through our comprehensive After-Sales Services. We offer proactive Preventive Maintenance plans designed to keep your 3D printing equipment operating at peak performance, minimizing the risk of unexpected breakdowns and extending the lifespan of your machines. In the event of technical issues, our Repair Services provide fast and reliable solutions, using original parts to ensure optimal functionality and maintain the integrity of your equipment. For immediate assistance, our Online Support is readily available to guide you through troubleshooting steps, software updates, and operational queries, ensuring minimal downtime. When more hands-on attention is needed, we offer On-Site Support, dispatching skilled professionals to your location to address complex issues, perform detailed diagnostics, and implement effective solutions. Whether you need routine maintenance, urgent repairs, or expert guidance, Solidforge is dedicated to providing the technical support and resources necessary to keep your operations running smoothly and efficiently.</p>
+            <p class="text-white line-height-30">At Solidforge, we follow rigorous training at our partners to stay on top of the technology we represent, ensuring we are always one step ahead of the challenges that might arise. Our goal is to empower you to maximize productivity, minimize downtime, and achieve the best possible results from your investment.</p>
+        </div>
+        
+    </div>
+
+    
+
+    <!-- Testimonials cards -->
+    <div class="container-fluid pt-5 pb-3 bg-body-secondary" data-aos="fade-up" data-aos-duration="1500">
+        <div class="row">
+            <div class="col-12 col-lg-11 mx-auto py-5">
+                <h2 class=" font-1">Testimonials</h2>
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-0">
+                            <div class="p-5">
+                                <div class="col-2 pb-4">
+                                    <img src="images/icon-quote.svg" class="card-img-top w-75" alt="...">
+                                </div>
+                                <p>I like the ease of use in the SolidForge platform, being able to 3D print on-demand orders for the first time, and most of all–being able to scale my business. In the beginning years ago I basically had the change in my pocket and a credit line at my bank so I couldn’t order a ton of things, and you never know what’s going to sell.”</p>
+                                <div class="py-4">
+                                    <h6 class="card-title fw-semibold text-uppercase">Steven Jaworski</h6>
+                                    <p>Owner | Voytek Medical</p>
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/testimonials-voytek-2x.jpg" class="w-100" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-0">
+                            <div class="p-5">
+                                <div class="col-2 pb-4">
+                                    <img src="images/icon-quote.svg" class="card-img-top w-75" alt="...">
+                                </div>
+                                <p>I like the ease of use in the SolidForge platform, being able to 3D print on-demand orders for the first time, and most of all–being able to scale my business. In the beginning years ago I basically had the change in my pocket and a credit line at my bank so I couldn’t order a ton of things, and you never know what’s going to sell.”</p>
+                                <div class="py-4">
+                                    <h6 class="card-title fw-semibold text-uppercase">Steven Jaworski</h6>
+                                    <p>Owner | Voytek Medical</p>
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/testimonials-voytek-2x.jpg" class="w-100" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-0">
+                            <div class="p-5">
+                                <div class="col-2 pb-4">
+                                    <img src="images/icon-quote.svg" class="card-img-top w-75" alt="...">
+                                </div>
+                                <p>I like the ease of use in the SolidForge platform, being able to 3D print on-demand orders for the first time, and most of all–being able to scale my business. In the beginning years ago I basically had the change in my pocket and a credit line at my bank so I couldn’t order a ton of things, and you never know what’s going to sell.”</p>
+                                <div class="py-4">
+                                    <h6 class="card-title fw-semibold text-uppercase">Steven Jaworski</h6>
+                                    <p>Owner | Voytek Medical</p>
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/testimonials-voytek-2x.jpg" class="w-100" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Materials cards -->
+    <div class="container-fluid py-5" data-aos="fade-out" data-aos-duration="1500">
+        <div class="row">
+            <div class="col-11 mx-auto py-5">
+                <div class="d-flex justify-content-between align-items-center mb-5">
+                    <h2 class=" font-1">Materials</h2>
+                    <button class="btn btn-danger">View All Materials</button>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="images/19107-01-060-scaled.jpg" class="w-100" alt="icon-1">
+                            </div>
+                            <div class="card-body px-0">
+                                <h6 class="card-title">Bringing SolidForge home, and welcoming Thangs — Marleen Vogelaar and Jules Witte explain more about how and why</h6>
+                                <p class="icon-link icon-link-hover mt-3">
+                                    BASF Technologies 
+                                    <svg class="bi" aria-hidden="true" viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>right-arrow</title> <desc>Created with Sketch.</desc> <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ui-gambling-website-lined-icnos-casinoshunter" transform="translate(-212.000000, -159.000000)" fill="#252528" fill-rule="nonzero"> <g id="square-filled" transform="translate(50.000000, 120.000000)"> <path d="M187.108012,39.2902857 L197.649804,49.7417043 L197.708994,49.7959169 C197.889141,49.9745543 197.986143,50.2044182 198,50.4382227 L198,50.5617773 C197.986143,50.7955818 197.889141,51.0254457 197.708994,51.2040831 L197.6571,51.2479803 L187.108012,61.7097143 C186.717694,62.0967619 186.084865,62.0967619 185.694547,61.7097143 C185.30423,61.3226668 185.30423,60.6951387 185.694547,60.3080911 L194.702666,51.3738496 L162.99947,51.3746291 C162.447478,51.3746291 162,50.9308997 162,50.3835318 C162,49.8361639 162.447478,49.3924345 162.99947,49.3924345 L194.46779,49.3916551 L185.694547,40.6919089 C185.30423,40.3048613 185.30423,39.6773332 185.694547,39.2902857 C186.084865,38.9032381 186.717694,38.9032381 187.108012,39.2902857 Z M197.115357,50.382693 L186.401279,61.0089027 L197.002151,50.5002046 L197.002252,50.4963719 L196.943142,50.442585 L196.882737,50.382693 L197.115357,50.382693 Z" id="right-arrow"> </path> </g> </g> </g> </g></svg>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="images/19107-01-060-scaled.jpg" class="w-100" alt="icon-1">
+                            </div>
+                            <div class="card-body px-0">
+                                <h6 class="card-title">Bringing SolidForge home, and welcoming Thangs — Marleen Vogelaar and Jules Witte explain more about how and why</h6>
+                                <p class="icon-link icon-link-hover mt-3">
+                                    BASF Technologies 
+                                    <svg class="bi" aria-hidden="true" viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>right-arrow</title> <desc>Created with Sketch.</desc> <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ui-gambling-website-lined-icnos-casinoshunter" transform="translate(-212.000000, -159.000000)" fill="#252528" fill-rule="nonzero"> <g id="square-filled" transform="translate(50.000000, 120.000000)"> <path d="M187.108012,39.2902857 L197.649804,49.7417043 L197.708994,49.7959169 C197.889141,49.9745543 197.986143,50.2044182 198,50.4382227 L198,50.5617773 C197.986143,50.7955818 197.889141,51.0254457 197.708994,51.2040831 L197.6571,51.2479803 L187.108012,61.7097143 C186.717694,62.0967619 186.084865,62.0967619 185.694547,61.7097143 C185.30423,61.3226668 185.30423,60.6951387 185.694547,60.3080911 L194.702666,51.3738496 L162.99947,51.3746291 C162.447478,51.3746291 162,50.9308997 162,50.3835318 C162,49.8361639 162.447478,49.3924345 162.99947,49.3924345 L194.46779,49.3916551 L185.694547,40.6919089 C185.30423,40.3048613 185.30423,39.6773332 185.694547,39.2902857 C186.084865,38.9032381 186.717694,38.9032381 187.108012,39.2902857 Z M197.115357,50.382693 L186.401279,61.0089027 L197.002151,50.5002046 L197.002252,50.4963719 L196.943142,50.442585 L196.882737,50.382693 L197.115357,50.382693 Z" id="right-arrow"> </path> </g> </g> </g> </g></svg>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-bottom border-0 rounded-0">
+                            <div class="col-12 mx-auto d-flex justify-content-between">
+                                <img src="images/19107-01-060-scaled.jpg" class="w-100" alt="icon-1">
+                            </div>
+                            <div class="card-body px-0">
+                                <h6 class="card-title">Bringing SolidForge home, and welcoming Thangs — Marleen Vogelaar and Jules Witte explain more about how and why</h6>
+                                <p class="icon-link icon-link-hover mt-3">
+                                    BASF Technologies 
+                                    <svg class="bi" aria-hidden="true" viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>right-arrow</title> <desc>Created with Sketch.</desc> <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ui-gambling-website-lined-icnos-casinoshunter" transform="translate(-212.000000, -159.000000)" fill="#252528" fill-rule="nonzero"> <g id="square-filled" transform="translate(50.000000, 120.000000)"> <path d="M187.108012,39.2902857 L197.649804,49.7417043 L197.708994,49.7959169 C197.889141,49.9745543 197.986143,50.2044182 198,50.4382227 L198,50.5617773 C197.986143,50.7955818 197.889141,51.0254457 197.708994,51.2040831 L197.6571,51.2479803 L187.108012,61.7097143 C186.717694,62.0967619 186.084865,62.0967619 185.694547,61.7097143 C185.30423,61.3226668 185.30423,60.6951387 185.694547,60.3080911 L194.702666,51.3738496 L162.99947,51.3746291 C162.447478,51.3746291 162,50.9308997 162,50.3835318 C162,49.8361639 162.447478,49.3924345 162.99947,49.3924345 L194.46779,49.3916551 L185.694547,40.6919089 C185.30423,40.3048613 185.30423,39.6773332 185.694547,39.2902857 C186.084865,38.9032381 186.717694,38.9032381 187.108012,39.2902857 Z M197.115357,50.382693 L186.401279,61.0089027 L197.002151,50.5002046 L197.002252,50.4963719 L196.943142,50.442585 L196.882737,50.382693 L197.115357,50.382693 Z" id="right-arrow"> </path> </g> </g> </g> </g></svg>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+     <footer class="container-fluid px-0 bg-black py-5" data-aos="zoom-in" data-aos-duration="1500">
+        <div class="col-12 col-lg-10 mx-auto border-bottom ">
+            <div class="row">
+                <div class="col-12 col-lg-4 text-center">
+                    <div class="col-10 col-lg-7 mx-auto mx-lg-0">
+                        <a class="navbar-brand col-6 col-md-4 col-lg-3 col-xl-2" href="index.html"><img src="images/logo.png" alt="SolidForgeLogo_RGB_Red" class="w-100"></a>
+                        <div class="text text-white">
+                          <p><span>Address:</span>Solidforge Ltd.</p>
+                          <p>12 Avlonas Street</p>
+                          <p>Suite 101, Kiti 7550</p>
+                          <p>Larnaca, Cyprus.</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 mx-auto text-center col-lg-4">
+                    <div class="text">
+                      <p><div class="text-white">Phone:</div> <a href="tel:+357 99 341589">+357 99 341589</a></p>
+                      <p><div class="text-white">Whatsapp:</div> <a href="tel:+357 99 341589">+357 99 341589</a></p>
+                      <p><div class="text-white">Email:</div> <a href="mailto:info@solid-forge.com">info@solid-forge.com</a></p>
+                  </div>
+                </div>
+                <div class="col-12 mx-auto text-center col-lg-4">
+                    <div class="text text-white">
+                        <p><div>Working Days/Hours:</div><div class="mt-5">Monday-Friday 8:00am-6:00pm</div></p>
+                        <p><div></div>Saturday 8:00am-1:00pm</p>
+                    </div>
+                </div>
+               <!--  <div class="col-12 mx-auto text-center col-lg-2">
+                    <h4 class="text-white font-1">SolidForge</h4>
+                    <p class="mb-1"><a href="#" class="text-decoration-none text-white">About</a></p>
+                    <p class="mb-1"><a href="#" class="text-decoration-none text-white">Blog</a></p>
+                    <p class="mb-1"><a href="#" class="text-decoration-none text-white">Press</a></p>
+                    <p class="mb-1"><a href="#" class="text-decoration-none text-white">Newsletter Signup</a></p>
+                    <p class="mb-1"><a href="#" class="text-decoration-none text-white">Careers</a></p>
+                </div> -->
+            </div>
+        </div>
+        <div class="col-10 mx-auto pt-4">
+            <div class="d-flex">
+                <p class="mb-1"><a href="#" class="text-decoration-none text-white">©  2025 SolidForge</a></p>
+                <p class="mb-1 mx-4"><a href="privacy.html" class="text-decoration-none text-white">Privacy</a></p>
+                <p class="mb-1"><a href="terms.html" class="text-decoration-none text-white">Terms</a></p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+         document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".submenu-toggle").forEach(function (submenu) {
+            submenu.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent link navigation
+                
+                let submenuDropdown = this.nextElementSibling;
+
+                // Close all other submenus
+                document.querySelectorAll(".dropdown-submenu .dropdown-menu").forEach(function (menu) {
+                    if (menu !== submenuDropdown) {
+                        menu.style.display = "none";
+                    }
+                });
+
+                // Toggle visibility of the clicked submenu
+                submenuDropdown.style.display = (submenuDropdown.style.display === "block") ? "none" : "block";
+
+                // Stop event from closing the main menu
+                e.stopPropagation();
+            });
+        });
+
+        // Close submenu when clicking outside
+        document.addEventListener("click", function (e) {
+            if (!e.target.closest(".dropdown-submenu")) {
+                document.querySelectorAll(".dropdown-submenu .dropdown-menu").forEach(function (menu) {
+                    menu.style.display = "none";
+                });
+            }
+        });
+    });
+
+    AOS.init();
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  </body>
+</html>
+<script>
+// document.addEventListener("DOMContentLoaded", function () {
+//     const banner = document.getElementById("welcomeBanner");
+
+//     function toggleBanner() {
+//         banner.classList.add("fade-in");
+//         setTimeout(() => {
+//             banner.classList.remove("fade-in");
+//             banner.classList.add("fade-out");
+//             setTimeout(() => {
+//                 banner.classList.remove("fade-out");
+//             }, 2000);
+//         }, 4000);
+//     }
+
+//     setInterval(toggleBanner, 7000);
+//     toggleBanner();
+// });
+</script>

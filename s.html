@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Timeline</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #007bff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item:nth-child(1)::before {
+            content: url('images/maps-and-flags.png');
+        }
+
+        .timeline-item:nth-child(2)::before {
+            content: url('image2.svg');
+        }
+
+        .timeline-item:nth-child(3)::before {
+            content: url('image3.svg');
+        }
+
+        .timeline-item::before {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            border-left: 10px solid #007bff;
+            right: -20px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            border-right: 10px solid #007bff;
+            left: -20px;
+        }
+
+        .timeline-heading {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+            font-size: 18px;
+            color: #007bff;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-heading {
+            right: -120px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-heading {
+            left: -120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-heading">Richiedi</div>
+            <div class="timeline-content">
+                <h4>Invia la richiesta</h4>
+                <p>Compila la forma in basso per richiedere il tuo appuntamento, indicando le tue preferenze.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-heading">Concorda</div>
+            <div class="timeline-content">
+                <h4>Attendi la nostra chiamata</h4>
+                <p>Verrai contattato il prima possibile da un nostro referente commerciale, che fisserà un
+                    videoppuntamento sulla base del raccoglimento delle esigenze e della disponibilità.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-heading">Collegati</div>
+            <div class="timeline-content">
+                <h4>Collegati il giorno dell'appuntamento</h4>
+                <p>Al giorno e ora prefissati collegati al link che ti sarà inviato via mail, grandi prestazioni su
+                    browser web, senza dover installare nessun software aggiuntivo!</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
