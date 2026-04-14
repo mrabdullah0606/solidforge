@@ -1,0 +1,13 @@
+# Ignore archives
+*.zip
+*.rar
+*.7z
+
+# Ignore videos
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Optional: ignore all images folder if needed
+# images/
