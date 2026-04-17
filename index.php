@@ -850,7 +850,7 @@
         <div class="row">
             <div class="col-11 mx-auto py-5">
                 <div class="d-flex justify-content-between align-items-center mb-5">
-                    <h2 class=" font-1">Products</h2>
+                    <h2 class=" font-1" id="products">Products</h2>
                     <a href="index.php" class="btn btn-warning">View All Products</a>
                 </div>
                 <div class="row">

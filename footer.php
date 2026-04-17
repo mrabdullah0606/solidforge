@@ -66,41 +66,41 @@
     <!-- AOS JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init();
-         document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".submenu-toggle").forEach(function (submenu) {
-            submenu.addEventListener("click", function (e) {
-                e.preventDefault(); // Prevent link navigation
-                
-                let submenuDropdown = this.nextElementSibling;
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize AOS
+            if (typeof AOS !== 'undefined') {
+                AOS.init();
+            }
 
-                // Close all other submenus
-                document.querySelectorAll(".dropdown-submenu .dropdown-menu").forEach(function (menu) {
-                    if (menu !== submenuDropdown) {
-                        menu.style.display = "none";
-                    }
+            // Submenu toggle logic
+            document.querySelectorAll(".submenu-toggle").forEach(function (submenu) {
+                submenu.addEventListener("click", function (e) {
+                    e.preventDefault(); // Prevent link navigation
+                    
+                    let submenuDropdown = this.nextElementSibling;
+
+                    // Close all other submenus
+                    document.querySelectorAll(".dropdown-submenu .dropdown-menu").forEach(function (menu) {
+                        if (menu !== submenuDropdown) {
+                            menu.classList.remove("show");
+                        }
+                    });
+
+                    // Toggle visibility of the clicked submenu
+                    submenuDropdown.classList.toggle("show");
+
+                    // Stop event from closing the main menu
+                    e.stopPropagation();
                 });
+            });
 
-                // Toggle visibility of the clicked submenu
-                submenuDropdown.style.display = (submenuDropdown.style.display === "block") ? "none" : "block";
-
-                // Stop event from closing the main menu
-                e.stopPropagation();
+            // Close submenu when clicking outside
+            document.addEventListener("click", function (e) {
+                if (!e.target.closest(".dropdown-submenu")) {
+                    document.querySelectorAll(".dropdown-submenu .dropdown-menu").forEach(function (menu) {
+                        menu.classList.remove("show");
+                    });
+                }
             });
         });
-
-        // Close submenu when clicking outside
-        document.addEventListener("click", function (e) {
-            if (!e.target.closest(".dropdown-submenu")) {
-                document.querySelectorAll(".dropdown-submenu .dropdown-menu").forEach(function (menu) {
-                    menu.style.display = "none";
-                });
-            }
-        });
-    });
-
-    AOS.init();
-
     </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>

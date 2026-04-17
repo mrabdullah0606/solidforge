@@ -88,9 +88,10 @@ if ($action === 'edit') {
         .main-content { padding: 30px; }
         .table { color: #efefef; }
         .form-control, .form-select { background-color: #333; border: 1px solid #444; color: #fff; }
+        .form-control::placeholder { color: #ffffff !important; opacity: 0.6; }
         .form-control:focus { background-color: #3b3b3b; color: #fff; border-color: #f7df50; box-shadow: none; }
         .section-item { border-left: 4px solid #f7df50; margin-bottom: 15px; }
-        .form-label, h4, h6 { color: #efefef; }
+        .form-label, h4, h6 { color: #ffffff; }
         .visual-form-card { border: 1px dashed #444; padding: 15px; margin-bottom: 15px; border-radius: 8px; }
         .btn-add { color: #f7df50; border: 1px dashed #f7df50; width: 100%; margin-top: 10px; }
         .btn-add:hover { background: rgba(247, 223, 80, 0.1); color: #f7df50; }
@@ -145,7 +146,7 @@ if ($action === 'edit') {
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div>
                                             <span class="badge bg-warning text-dark me-2">Order: <?php echo $s['sort_order']; ?></span>
-                                            <span class="text-uppercase fw-bold"><?php echo $s['type']; ?></span>
+                                            <span class="text-uppercase fw-bold text-white"><?php echo $s['type']; ?></span>
                                         </div>
                                         <div>
                                             <a href="sections.php?product_id=<?php echo $product_id; ?>&action=edit&id=<?php echo $s['id']; ?>" class="btn btn-sm btn-outline-info me-2">Edit</a>
@@ -191,7 +192,9 @@ if ($action === 'edit') {
                                 // Ensure all possible keys exist so Alpine can track them
                                 const defaults = {
                                     title: "", subtitle: "", bg_image: "", product_image: "", 
-                                    video_url: "", button_text: "Watch Video", cards: [], tabs: [], columns: ["Param","Value"], rows: [["",""]]
+                                    video_url: "", button_text: "Watch Video", 
+                                    cards: [], tabs: [], specs: [], stats: [], columns: [],
+                                    layout: "left", bg_type: "solid", card_title: "", card_image: "", footer_text: ""
                                 };
                                 this.content = { ...defaults, ...this.content };
 
@@ -201,6 +204,9 @@ if ($action === 'edit') {
                                       if(val === "cards") this.content.cards = [{title: "", text: "", image: ""}];
                                       if(val === "specs") { this.content.columns = ["Param","Value"]; this.content.rows = [["",""]]; }
                                       if(val === "tabs") { this.content.tabs = [{title: "Tab 1", content: ""}]; }
+                                      if(val === "stats_grid") { this.content.stats = [{value: "100%", label: "Description here"}]; }
+                                      if(val === "text_grid") { this.content.columns = [{title: "Feature", text: "Description here"}]; }
+                                      if(val === "comparison_card") { this.content.specs = [{label: "Specification", value: "Value here"}]; }
                                     }
                                 });
                             },
@@ -222,6 +228,10 @@ if ($action === 'edit') {
                                     <label class="form-label">Section Type</label>
                                     <select name="type" class="form-select" x-model="type" required>
                                         <option value="hero">Hero Banner</option>
+                                        <option value="comparison_card">Product Comparison Card</option>
+                                        <option value="content_split">Split Content (Image + Text)</option>
+                                        <option value="text_grid">Feature Text Grid</option>
+                                        <option value="stats_grid">Impact Stats Grid</option>
                                         <option value="cards">Feature Cards</option>
                                         <option value="specs">Technical Specs Table</option>
                                         <option value="video_banner">Video Banner</option>
@@ -391,6 +401,150 @@ if ($action === 'edit') {
                                         </div>
                                     </template>
 
+                                    <!-- COMPARISON CARD FIELDS -->
+                                    <template x-if="type === 'comparison_card'">
+                                        <div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Background Image</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" x-model="content.bg_image">
+                                                    <button class="btn btn-outline-warning" type="button" @click="openPicker(content, 'bg_image')"><i class="bi bi-folder"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Main Section Title</label>
+                                                <input type="text" class="form-control" x-model="content.title">
+                                            </div>
+                                            <div class="visual-form-card">
+                                                <h6 class="mb-3">Card Content</h6>
+                                                <div class="mb-2 text-white">
+                                                    <label class="small">Card Heading</label>
+                                                    <input type="text" class="form-control form-control-sm" x-model="content.card_title">
+                                                </div>
+                                                <div class="mb-3 text-white">
+                                                    <label class="small">Card Image</label>
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text" class="form-control" x-model="content.card_image">
+                                                        <button class="btn btn-outline-warning" type="button" @click="openPicker(content, 'card_image')"><i class="bi bi-folder"></i></button>
+                                                    </div>
+                                                </div>
+                                                <label class="small">Specifications List</label>
+                                                <template x-for="(spec, index) in content.specs" :key="index">
+                                                    <div class="d-flex gap-2 mb-2">
+                                                        <input type="text" class="form-control form-control-sm" x-model="spec.label" placeholder="Label">
+                                                        <input type="text" class="form-control form-control-sm" x-model="spec.value" placeholder="Value">
+                                                        <button type="button" class="btn btn-sm text-danger" @click="content.specs.splice(index, 1)"><i class="bi bi-trash"></i></button>
+                                                    </div>
+                                                </template>
+                                                <button type="button" class="btn btn-sm btn-outline-warning w-100" @click="content.specs.push({label:'', value:''})">Add Spec</button>
+                                                <div class="mt-3">
+                                                    <label class="small">Footer Text</label>
+                                                    <input type="text" class="form-control form-control-sm" x-model="content.footer_text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+
+                                    <!-- CONTENT SPLIT FIELDS -->
+                                    <template x-if="type === 'content_split'">
+                                        <div>
+                                            <div class="row">
+                                                <div class="col-6 mb-3">
+                                                    <label class="form-label">Layout</label>
+                                                    <select class="form-select" x-model="content.layout">
+                                                        <option value="left">Text Left / Image Right</option>
+                                                        <option value="right">Image Left / Text Right</option>
+                                                     </select>
+                                                </div>
+                                                <div class="col-6 mb-3">
+                                                    <label class="form-label">Background Type</label>
+                                                    <select class="form-select" x-model="content.bg_type">
+                                                        <option value="solid">Solid Black</option>
+                                                        <option value="gradient">Radial Gradient</option>
+                                                        <option value="image">Image Background</option>
+                                                     </select>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Title</label>
+                                                <input type="text" class="form-control" x-model="content.title">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Text Content</label>
+                                                <textarea class="form-control" rows="3" x-model="content.subtitle"></textarea>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Featured Image</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" x-model="content.product_image">
+                                                    <button class="btn btn-outline-warning" type="button" @click="openPicker(content, 'product_image')"><i class="bi bi-folder"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+
+                                    <!-- TEXT GRID FIELDS -->
+                                    <template x-if="type === 'text_grid'">
+                                        <div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Background Image</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" x-model="content.bg_image">
+                                                    <button class="btn btn-outline-warning" type="button" @click="openPicker(content, 'bg_image')"><i class="bi bi-folder"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Section Title</label>
+                                                <input type="text" class="form-control" x-model="content.title">
+                                            </div>
+                                            <label class="form-label">Columns</label>
+                                            <template x-for="(col, index) in content.columns" :key="index">
+                                                <div class="visual-form-card">
+                                                    <input type="text" class="form-control mb-2" x-model="col.title" placeholder="Column Heading">
+                                                    <textarea class="form-control" x-model="col.text" placeholder="Column Text"></textarea>
+                                                    <button type="button" class="btn btn-sm btn-link text-danger p-0" @click="content.columns.splice(index, 1)">Remove</button>
+                                                </div>
+                                            </template>
+                                            <button type="button" class="btn btn-add btn-sm" @click="content.columns.push({title:'', text:''})">Add Column</button>
+                                        </div>
+                                    </template>
+
+                                    <!-- STATS GRID FIELDS -->
+                                    <template x-if="type === 'stats_grid'">
+                                        <div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Background Image</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" x-model="content.bg_image">
+                                                    <button class="btn btn-outline-warning" type="button" @click="openPicker(content, 'bg_image')"><i class="bi bi-folder"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Title</label>
+                                                <input type="text" class="form-control" x-model="content.title">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Subtitle</label>
+                                                <input type="text" class="form-control" x-model="content.subtitle">
+                                            </div>
+                                            <label class="form-label">Stats Highlights</label>
+                                            <template x-for="(stat, index) in content.stats" :key="index">
+                                                <div class="visual-form-card">
+                                                    <div class="row g-2">
+                                                        <div class="col-4">
+                                                            <input type="text" class="form-control" x-model="stat.value" placeholder="Value (e.g. 65%)">
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <input type="text" class="form-control" x-model="stat.label" placeholder="Description">
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-sm btn-link text-danger p-0 mt-1" @click="content.stats.splice(index, 1)">Remove</button>
+                                                </div>
+                                            </template>
+                                            <button type="button" class="btn btn-add btn-sm" @click="content.stats.push({value:'', label:''})">Add Stat</button>
+                                        </div>
+                                    </template>
+
                                 </div>
 
                                 <button type="submit" name="<?php echo $editSection ? 'update_section' : 'add_section'; ?>" class="btn btn-warning w-100 mt-4">
@@ -405,7 +559,9 @@ if ($action === 'edit') {
                         <div class="mt-4 p-3 bg-dark border border-secondary rounded">
                             <h6><i class="bi bi-info-circle"></i> Help Tips</h6>
                             <ul class="small text-muted ps-3 mb-0">
-                                <li><strong>Hero</strong>: bg_image, title, subtitle</li>
+                                <li><strong>Hero / Split</strong>: title, text, product_image, bg_image</li>
+                                <li><strong>Comparison</strong>: card_title, card_image, specs[{label, value}]</li>
+                                <li><strong>Grids</strong>: title, stats[{value, label}] OR columns[{title, text}]</li>
                                 <li><strong>Cards</strong>: title, cards[{image, title, text}]</li>
                                 <li><strong>Specs</strong>: title, columns[], rows[[]]</li>
                             </ul>

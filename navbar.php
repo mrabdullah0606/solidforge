@@ -10,6 +10,55 @@ $navBrands = getBrandsWithProducts($pdo);
     .text-warning{
         color: #f7df50 !important;
     }
+    
+    /* Global Dropdown Transition Styling */
+    .dropdown-menu {
+        transition: all 0.3s ease;
+        transform: translateY(10px);
+        visibility: hidden;
+        display: block;
+        opacity: 0;
+    }
+
+    /* Open main menu on hover */
+    .hover-dropdown:hover > .dropdown-menu,
+    .dropdown-menu.show {
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    /* Open sub-menus on hover */
+    .dropdown-submenu:hover > .dropdown-menu {
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: block !important;
+        transform: translateY(0) !important;
+    }
+
+    /* Ensure sub-menus are positioned correctly and hidden when not active */
+    .dropdown-submenu .dropdown-menu {
+        left: 100%;
+        top: 0;
+        margin-top: 0;
+        transform: translateX(10px); /* Slide in from side on desktop */
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+        transform: translateX(0) !important;
+    }
+
+    /* Handle mobile adjustments (no hover, use .show class) */
+    @media (max-width: 991px) {
+        .dropdown-menu {
+            transform: translateY(0);
+        }
+        .dropdown-submenu .dropdown-menu {
+            left: 0;
+            position: relative;
+            transform: translateY(0);
+        }
+    }
 </style>
 <nav class="navbar navbar-expand-lg" style="background-color: #3b3b3b;">
     <div class="container-fluid">
@@ -25,8 +74,8 @@ $navBrands = getBrandsWithProducts($pdo);
                     <a class="nav-link text-warning" aria-current="page" href="index.php">Home</a>
                 </li>
                     <!-- Products -->
-                <li class="nav-item dropdown" data-bs-auto-close="outside">
-                    <a class="nav-link text-warning dropdown-toggle" href="#" id="navbarDropdownManufacturing" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item dropdown hover-dropdown" data-bs-auto-close="outside">
+                    <a class="nav-link text-warning dropdown-toggle" href="index.php#products" id="navbarDropdownManufacturing" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Products
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownManufacturing">
