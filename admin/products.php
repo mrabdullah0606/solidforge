@@ -94,6 +94,8 @@ if ($action === 'list') {
                     <a class="nav-link" href="index.php"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
                     <a class="nav-link active" href="products.php"><i class="bi bi-box-seam me-2"></i> Products</a>
                     <a class="nav-link" href="brands.php"><i class="bi bi-tags me-2"></i> Brands</a>
+                    <a class="nav-link" href="customers.php"><i class="bi bi-people me-2"></i> Customers</a>
+                    <a class="nav-link" href="quotes.php"><i class="bi bi-chat-left-quote me-2"></i> Quotes</a>
                     <hr>
                     <a class="nav-link text-danger" href="logout.php"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
                 </nav>

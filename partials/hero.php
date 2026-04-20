@@ -31,13 +31,24 @@ $titleColor = $content['title_color'] ?? 'warning';
     </p>
 
     <?php if ($productImage): ?>
-        <div class="product-reveal mt-auto">
+        <div class="product-reveal mt-auto mb-4">
             <img src="<?php echo $productImage; ?>" 
                  class="img-fluid" 
-                 style="max-height: 500px; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.8));" 
+                 style="max-height: 400px; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.8));" 
                  alt="<?php echo htmlspecialchars($title); ?>">
         </div>
     <?php endif; ?>
+
+    <div class="d-flex justify-content-center gap-3 mt-4">
+        <a href="quote.php?product_id=<?php echo $product['id'] ?? ''; ?>" class="btn btn-warning btn-lg px-5 py-3 fw-bold text-uppercase" style="border-radius: 50px; letter-spacing: 1px;">
+            <i class="bi bi-chat-left-quote me-2"></i> Get a Quotation
+        </a>
+        <?php if (!isCustomerLoggedIn()): ?>
+            <a href="register.php" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold text-uppercase" style="border-radius: 50px; letter-spacing: 1px;">
+                Register for Access
+            </a>
+        <?php endif; ?>
+    </div>
   </div>
 </section>
 

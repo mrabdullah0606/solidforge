@@ -1,4 +1,7 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // includes/functions.php - Helper functions for Solidforge
 
 /**
@@ -52,5 +55,39 @@ function createSlug($string) {
     $string = preg_replace('/[^a-z0-9-]/', '-', $string);
     $string = preg_replace('/-+/', '-', $string);
     return rtrim($string, '-');
+}
+
+/**
+ * Customer Authentication Helpers
+ */
+function isCustomerLoggedIn() {
+    return isset($_SESSION['customer_id']);
+}
+
+function getLoggedInCustomer($pdo) {
+    if (!isCustomerLoggedIn()) return null;
+    $stmt = $pdo->prepare("SELECT * FROM customers WHERE id = ?");
+    $stmt->execute([$_SESSION['customer_id']]);
+    return $stmt->fetch();
+}
+
+function isCustomerApproved($pdo) {
+    $customer = getLoggedInCustomer($pdo);
+    return ($customer && $customer['status'] === 'approved');
+}
+
+/**
+ * Notification Helper
+ */
+function addNotification($pdo, $type, $reference_id) {
+    $stmt = $pdo->prepare("INSERT INTO notifications (type, reference_id) VALUES (?, ?)");
+    return $stmt->execute([$type, $reference_id]);
+}
+
+/**
+ * Admin Authentication Helper
+ */
+function isAdminLoggedIn() {
+    return isset($_SESSION['admin_id']);
 }
 ?>

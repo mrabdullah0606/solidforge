@@ -8,6 +8,8 @@ requireLogin();
 // Fetch some stats
 $brandCount = $pdo->query("SELECT COUNT(*) FROM brands")->fetchColumn();
 $productCount = $pdo->query("SELECT COUNT(*) FROM products")->fetchColumn();
+$pendingCustomers = $pdo->query("SELECT COUNT(*) FROM customers WHERE status = 'pending'")->fetchColumn();
+$newQuotes = $pdo->query("SELECT COUNT(*) FROM quotes WHERE status = 'new'")->fetchColumn();
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,6 +29,7 @@ $productCount = $pdo->query("SELECT COUNT(*) FROM products")->fetchColumn();
         .text-muted { color: #aaaaaa !important; }
         .main-content { padding: 30px; }
         h5, .h5 { color: #efefef; }
+        .badge-notify { font-size: 0.7rem; vertical-align: middle; }
     </style>
   </head>
   <body>
@@ -41,7 +44,12 @@ $productCount = $pdo->query("SELECT COUNT(*) FROM products")->fetchColumn();
                     <a class="nav-link active" href="index.php"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
                     <a class="nav-link" href="products.php"><i class="bi bi-box-seam me-2"></i> Products</a>
                     <a class="nav-link" href="brands.php"><i class="bi bi-tags me-2"></i> Brands</a>
-                    <a class="nav-link" href="#"><i class="bi bi-people me-2"></i> Users</a>
+                    <a class="nav-link" href="customers.php"><i class="bi bi-people me-2"></i> Customers 
+                        <?php if($pendingCustomers > 0): ?><span class="badge bg-danger badge-notify"><?php echo $pendingCustomers; ?></span><?php endif; ?>
+                    </a>
+                    <a class="nav-link" href="quotes.php"><i class="bi bi-chat-left-quote me-2"></i> Quotes
+                        <?php if($newQuotes > 0): ?><span class="badge bg-danger badge-notify"><?php echo $newQuotes; ?></span><?php endif; ?>
+                    </a>
                     <hr>
                     <a class="nav-link text-danger" href="logout.php"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
                 </nav>
@@ -55,26 +63,32 @@ $productCount = $pdo->query("SELECT COUNT(*) FROM products")->fetchColumn();
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card p-4 mb-4">
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <h5 class="text-muted">Total Products</h5>
-                                    <h2 class="text-warning"><?php echo $productCount; ?></h2>
-                                </div>
-                                <i class="bi bi-box-seam fs-1 text-muted"></i>
-                            </div>
+                    <div class="col-md-3">
+                        <div class="card p-4 mb-4 text-center">
+                            <h5 class="text-muted">Products</h5>
+                            <h2 class="text-warning"><?php echo $productCount; ?></h2>
+                            <i class="bi bi-box-seam fs-4 text-muted"></i>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card p-4 mb-4">
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <h5 class="text-muted">Active Brands</h5>
-                                    <h2 class="text-warning"><?php echo $brandCount; ?></h2>
-                                </div>
-                                <i class="bi bi-award fs-1 text-muted"></i>
-                            </div>
+                    <div class="col-md-3">
+                        <div class="card p-4 mb-4 text-center">
+                            <h5 class="text-muted">Pending Reg.</h5>
+                            <h2 class="<?php echo $pendingCustomers > 0 ? 'text-danger' : 'text-success'; ?>"><?php echo $pendingCustomers; ?></h2>
+                            <i class="bi bi-people fs-4 text-muted"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-4 mb-4 text-center">
+                            <h5 class="text-muted">New Quotes</h5>
+                            <h2 class="<?php echo $newQuotes > 0 ? 'text-danger' : 'text-success'; ?>"><?php echo $newQuotes; ?></h2>
+                            <i class="bi bi-chat-left-quote fs-4 text-muted"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-4 mb-4 text-center">
+                            <h5 class="text-muted">Brands</h5>
+                            <h2 class="text-warning"><?php echo $brandCount; ?></h2>
+                            <i class="bi bi-award fs-4 text-muted"></i>
                         </div>
                     </div>
                 </div>

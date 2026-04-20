@@ -72,3 +72,41 @@ INSERT INTO `brands` (`name`, `slug`) VALUES
 -- In a real scenario, use password_hash() in PHP. This is just for initial setup.
 -- $2y$10$8.z8p.fX.1y9/H/8y5x.eO1y/H/8y5x.eO1y/H/8y5x.eO1y/H/8 is a dummy hash.
 INSERT INTO `admins` (`username`, `password`) VALUES ('admin', '$2y$10$nNQ8mGZ.p4v9rV6.z5.z5.z5.z5.z5.z5.z5.z5.z5.z5.z5.z5.');
+
+-- Customers Table
+CREATE TABLE IF NOT EXISTS `customers` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL,
+    `company_name` VARCHAR(255),
+    `phone` VARCHAR(50),
+    `status` ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
+    `documents_json` TEXT, -- Stores paths to uploaded documents
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+-- Quotes Table
+CREATE TABLE IF NOT EXISTS `quotes` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `customer_id` INT NULL, -- Can be NULL for guest quotes
+    `product_id` INT,
+    `name` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `company` VARCHAR(255),
+    `phone` VARCHAR(50),
+    `message` TEXT,
+    `status` ENUM('new', 'pending', 'completed') DEFAULT 'new',
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`customer_id`) REFERENCES `customers`(`id`) ON DELETE SET NULL,
+    FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+-- Notifications Table
+CREATE TABLE IF NOT EXISTS `notifications` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `type` ENUM('registration', 'quote') NOT NULL,
+    `reference_id` INT NOT NULL, -- id from customers or quotes table
+    `is_read` BOOLEAN DEFAULT FALSE,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;

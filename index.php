@@ -1,3 +1,4 @@
+<?php require_once('includes/session_init.php'); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -56,44 +57,7 @@
     .quotebtn:hover{background-color:#F5DD4C; }
     .border-yellow,.border-start{border-color: #F5DD4C !important;}
     .text-yellow{color: #F7E04B;}
-     /* Ensure dropdown alignment */
-        .dropdown-menu {
-            min-width: 250px;
-        }
-
-        /* Submenu positioning */
-        .dropdown-submenu {
-            position: relative;
-        }
-
-        /* Default: Submenu opens to the right */
-        .dropdown-submenu .dropdown-menu {
-            top: 0;
-            left: 100%;
-            margin-left: 0.1rem;
-            display: none;
-            position: absolute;
-        }
-
-        /* Right arrow for submenu indication */
-        .dropdown-submenu > a::after {
-            content: " ►"; /* Right arrow */
-            float: right;
-            font-size: 12px;
-        }
-
-        /* On mobile, submenu opens downward instead of right */
-        @media (max-width: 991px) {
-            .dropdown-submenu .dropdown-menu {
-                left: 0;
-                position: relative;
-            }
-
-            /* Change arrow direction to ▼ for mobile */
-            .dropdown-submenu > a::after {
-                content: " ▼"; /* Downward arrow */
-            }
-        }
+    .line-height-30{
 
         .training-section {
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
@@ -244,10 +208,6 @@
         }
 
         header .container {
-            position: relative;
-            z-index: 1; /* Bring the header content above the video and overlay */
-        }
-        .navbar{background: #000;}
         .carousel-inner {
             height: 600px; /* Set fixed height */
         }

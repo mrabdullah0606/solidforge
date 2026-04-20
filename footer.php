@@ -51,10 +51,11 @@
         </div>
     </div>
     <div class="col-10 mx-auto pt-4">
-        <div class="d-flex">
+        <div class="d-flex align-items-center">
             <p class="mb-1"><a href="#" class="text-decoration-none text-warning">© 2025 SolidForge</a></p>
             <p class="mb-1 mx-4"><a href="privacy.php" class="text-decoration-none text-warning">Privacy</a></p>
             <p class="mb-1"><a href="terms.php" class="text-decoration-none text-warning">Terms</a></p>
+            <p class="mb-1 ms-auto"><a href="admin/login.php" class="text-decoration-none text-muted small"><i class="bi bi-shield-lock me-1"></i>Admin Panel</a></p>
         </div>
     </div>
 </footer>
