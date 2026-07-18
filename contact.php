@@ -667,9 +667,8 @@ textarea.form-control {
                 </div>
                 <div class="col-12 mx-auto col-lg-4">
                     <div class="text text-warning ms-6">
-                     <div><span class="text-warning fw-medium">Phone: </span><span><a href="tel:+357 99 341589" class=" text-warning">+357 99 341589</a></span></div>
-                     <div><span class="text-warning fw-medium">Whatsapp: </span><span><a href="tel:+357 99 341589" class=" text-warning">+357 99 341589</a></span></div>
-                     <div><span class="text-warning fw-medium">Email: </span><span><a href="mailto:info@solid-forge.com" class="text-warning">info@solid-forge.com</a></span></div>
+                     <div><span class="text-warning fw-bold fs-5">+357 9595 2316</span></div>
+                     <div class="mt-2"><span class="text-warning fw-bold fs-5">info@solidforgeltd.com</span></div>
                   </div>
                 </div>
                 <div class="col-12 mx-auto col-lg-4">

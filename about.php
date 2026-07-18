@@ -56,28 +56,13 @@
         <section class="container-fluid d-lg-flex align-items-center sectioncontent text-dark">
             <div class="col-md-6 col-12 p-5">
                <h1 class="fs-2">About Solidforge</h1>
-               <p class="line-height-30">Since 2003, we have been a leader in Additive Manufacturing (AM) technology. In 2024, we created <b>Solidforge Ltd. Cyprus</b> to provide cutting-edge solutions to businesses across a wide range of industries. With a strong focus on the jewelry market, we empower professionals to create high-quality, custom designs with exceptional precision. Beyond jewelry, our AM technology serves sectors such as dental, manufacturing, defense, and education, offering versatile tools that drive innovation and optimize operational efficiency. At <b>Solidforge</b>, we are committed to delivering high-performance, reliable AM solutions that inspire creativity, streamline production, and elevate quality across industries.</p>
-               <h2 class="fs-4">Our Expertise</h2>
-               <h3 class="fs-5">Additive Manufacturing for the Jewelry Industry</h3>
-               <p class="line-height-30">The jewelry industry demands a perfect balance of artistry and precision craftsmanship. Solidforge offers advanced AM technologies that allow jewelers to bring their most intricate designs to life with speed, accuracy, and efficiency.</p>
-               <ul class="custom-list line-height-30">
-                <li><strong>Precision Detail:</strong> Achieve high-resolution designs with fine detailing.</li>
-                <li><strong>Rapid Prototyping:</strong> Quickly prototype designs, reducing development time and cost.</li>
-                <li><strong>Casting-Ready Models:</strong> Produce highly accurate wax models that are ready for casting, enhancing workflow efficiency.</li>
-                <li><strong>Customization:</strong> Flexibility to create unique, custom jewelry pieces tailored to client specifications.</li>
-                </ul>
-            <p class="mt-3 line-height-30">
-                Whether for bespoke jewelry or high-volume production, <strong>Solidforge</strong> delivers tools designed to meet your needs with unmatched precision and reliability.
-            </p>
-            <h3 class="fs-4">Serving Multiple Industries</h3>
-               <p class="line-height-30">While we specialize in the jewelry sector, Solidforge’s AM technology supports a variety of industries, including:</p>
-               <ul class="custom-list line-height-30">
-                <li><strong>Dental:</strong> Precision dental models, orthodontic appliances, and surgical guides for improved patient outcomes and streamlined workflows.</li>
-                <li><strong>Manufacturing:</strong> Efficient prototyping of custom parts, tools, and components for faster time-to-market.</li>
-                <li><strong>Defense:</strong> Prototyping and manufacturing of durable, high-precision components for the defense sector, including weaponry parts and tactical equipment.</li>
-                <li><strong>Education:</strong> Hands-on tools and technologies that foster creativity and innovation in educational environments.</li>
-                <li><strong>Healthcare:</strong> Custom prosthetics, anatomical models, and medical device prototypes to enhance patient care and medical practices.</li>
-            </ul>
+               <p class="line-height-30">Since 2003, we have been helping businesses adopt Additive Manufacturing (AM) technologies to drive innovation, improve productivity, and transform the way products are designed and manufactured. In 2024, we established Solidforge Ltd. in Cyprus to provide advanced AM solutions and expert support to customers across the Middle East and beyond.</p>
+               <p class="line-height-30">While our primary expertise is in the jewelry industry, where precision, surface quality, and casting reliability are essential, our solutions are designed to support organizations across a wide range of industries adopting Additive Manufacturing technologies. From dental and healthcare to manufacturing, oil and gas, defense, education, and other industrial sectors, we help businesses improve design flexibility, accelerate product development, optimize production, and achieve exceptional precision.</p>
+               <p class="line-height-30">At Solidforge, we believe that successful Additive Manufacturing is about more than technology. It is about understanding our customers' needs and providing complete solutions that deliver long-term value. We work closely with every customer to recommend the right equipment, materials, software, and workflow, backed by professional training and responsive technical support.</p>
+               <p class="line-height-30">Our carefully selected portfolio of world-class Additive Manufacturing solutions enables businesses to produce prototypes, casting patterns, functional parts, tooling, medical models, and custom-engineered components with outstanding accuracy, reliability, and efficiency.</p>
+               <p class="line-height-30">With more than two decades of industry experience, Solidforge has built a reputation for technical expertise, dependable service, and long-term customer relationships. From initial consultation and installation to training and after-sales support, we are committed to helping our customers maximize the benefits of Additive Manufacturing and confidently embrace the future of digital manufacturing.</p>
+               <p class="line-height-30">Whether you are creating intricate jewelry, developing innovative products, improving manufacturing processes, or exploring the possibilities of Additive Manufacturing for your organization, Solidforge is your trusted partner for advanced AM solutions.</p>
+               <p class="mt-3 line-height-30 fw-bold">Empowering industries through Additive Manufacturing—with jewelry at the heart of our expertise.</p>
             </div>
            <!--  <div class="col-md-6 col-12 p-5">
                 <img src="images/about.jpg" class="img-fluid imgg" alt="img">

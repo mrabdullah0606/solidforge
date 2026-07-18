@@ -478,39 +478,12 @@
     <div class="container-fluid px-0 bg-grey" data-aos="fade" data-aos-duration="1500">
         <div class="col-9 mx-auto">
         <div class="row">
-                <div class="col-12 col-lg-3 my-3 position-relative pt-5 pb-4 ps-4">
-                    <div class="withsep text-white d-flex justify-content-between">
+                <div class="col-12 my-3 position-relative pt-5 pb-4 px-4">
+                    <div class="text-white d-flex justify-content-center">
                         <div class="text-center w-100">
                             <h3 class="font-1 fs-1 fw-semibold mb-1 text-yellow">Jewellery 
                             </h3>
                             <p class="text-yellow fs-12 px-3">Technology that brings your designs to life.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3 my-3 position-relative pt-5 pb-4 ps-4">
-                    <div class="withsep text-white d-flex justify-content-between">
-                        <div class="text-center w-100">
-                            <h3 class="font-1 fs-1 fw-semibold mb-1 text-yellow">Defense
-                            </h3>
-                            <p class="text-yellow fs-12 px-3">High-performance solutions for defense applications.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3 my-3 position-relative pt-5 pb-4 ps-4">
-                    <div class="withsep text-white d-flex justify-content-between">
-                        <div class="text-center w-100 pe-2">
-                            <h3 class="font-1 fs-1 fw-semibold mb-1 text-yellow">Dental
-                            </h3>
-                            <p class="text-yellow fs-12 px-3">Innovate and excel in precision dental solutions.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3 my-3 position-relative pt-5 pb-4 ps-4">
-                    <div class="withsep text-white d-flex justify-content-between">
-                        <div class="text-center w-100">
-                            <h3 class="font-1 fs-1 fw-semibold mb-1 text-yellow">Health
-                            </h3>
-                            <p class="text-yellow fs-12 px-3">Advancing personalized patient care</p>
                         </div>
                     </div>
                 </div>
