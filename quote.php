@@ -1,3 +1,4 @@
+<?php require_once('includes/session_init.php'); ?>
 <?php
 require_once('includes/db.php');
 require_once('includes/functions.php');

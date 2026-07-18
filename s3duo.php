@@ -1,3 +1,4 @@
+<?php require_once('includes/session_init.php'); ?>
 <!doctype html>
 <html lang="en">
   <head>
