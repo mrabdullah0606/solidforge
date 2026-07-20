@@ -10,6 +10,8 @@ $title = $content['title'] ?? '';
 $subtitle = $content['subtitle'] ?? '';
 $textColor = $content['text_color'] ?? 'white';
 $titleColor = $content['title_color'] ?? 'warning';
+$showQuotation = isset($content['show_quotation']) ? $content['show_quotation'] : true;
+$showRegister = isset($content['show_register']) ? $content['show_register'] : true;
 ?>
 <section
   class="min-vh-100 d-flex flex-column align-items-center justify-content-start text-<?php echo $textColor; ?> text-center position-relative overflow-hidden"
@@ -40,10 +42,12 @@ $titleColor = $content['title_color'] ?? 'warning';
     <?php endif; ?>
 
     <div class="d-flex justify-content-center gap-3 mt-4">
+        <?php if ($showQuotation): ?>
         <a href="quote.php?product_id=<?php echo $product['id'] ?? ''; ?>" class="btn btn-warning btn-lg px-5 py-3 fw-bold text-uppercase" style="border-radius: 50px; letter-spacing: 1px;">
             <i class="bi bi-chat-left-quote me-2"></i> Get a Quotation
         </a>
-        <?php if (!isCustomerLoggedIn()): ?>
+        <?php endif; ?>
+        <?php if ($showRegister && !isCustomerLoggedIn()): ?>
             <a href="register.php" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold text-uppercase" style="border-radius: 50px; letter-spacing: 1px;">
                 Register for Access
             </a>

@@ -787,62 +787,54 @@
             <div class="col-11 mx-auto py-5">
                 <div class="d-flex justify-content-between align-items-center mb-5">
                     <h2 class=" font-1" id="products">Products</h2>
-                    <a href="index.php" class="btn btn-warning">View All Products</a>
+                    <!-- <a href="index.php" class="btn btn-warning">View All Products</a> -->
                 </div>
                 <div class="row">
+                    <!-- Card 1 -->
                     <div class="col-12 col-lg-3">
                         <div class="card border-bottom border-0 rounded-0">
                             <div class="col-12 mx-auto d-flex justify-content-between">
-                                <img src="images/cropped-jewellery.jpg" class="w-100" alt="icon-1">
+                                <img src="images/dual_channel_wax_3d_printing.webp" class="w-100" alt="WJ51C Mode">
                             </div>
                             <div class="card-body px-0">
-                                <h6 class="card-title">Bringing SolidForge home, and welcoming Thangs — Marleen Vogelaar and Jules Witte explain more about how and why</h6>
-                                <p class="icon-link icon-link-hover mt-3">
-                                    Jewellery Manufactuing 
-                                    <svg class="bi" aria-hidden="true" viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>right-arrow</title> <desc>Created with Sketch.</desc> <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ui-gambling-website-lined-icnos-casinoshunter" transform="translate(-212.000000, -159.000000)" fill="#252528" fill-rule="nonzero"> <g id="square-filled" transform="translate(50.000000, 120.000000)"> <path d="M187.108012,39.2902857 L197.649804,49.7417043 L197.708994,49.7959169 C197.889141,49.9745543 197.986143,50.2044182 198,50.4382227 L198,50.5617773 C197.986143,50.7955818 197.889141,51.0254457 197.708994,51.2040831 L197.6571,51.2479803 L187.108012,61.7097143 C186.717694,62.0967619 186.084865,62.0967619 185.694547,61.7097143 C185.30423,61.3226668 185.30423,60.6951387 185.694547,60.3080911 L194.702666,51.3738496 L162.99947,51.3746291 C162.447478,51.3746291 162,50.9308997 162,50.3835318 C162,49.8361639 162.447478,49.3924345 162.99947,49.3924345 L194.46779,49.3916551 L185.694547,40.6919089 C185.30423,40.3048613 185.30423,39.6773332 185.694547,39.2902857 C186.084865,38.9032381 186.717694,38.9032381 187.108012,39.2902857 Z M197.115357,50.382693 L186.401279,61.0089027 L197.002151,50.5002046 L197.002252,50.4963719 L196.943142,50.442585 L196.882737,50.382693 L197.115357,50.382693 Z" id="right-arrow"> </path> </g> </g> </g> </g></svg>
-                                </p>
+                                <h6 class="card-title fw-bold">WJ51C Single vs Dual Channel: Which Mode to Choose?</h6>
+                                <p class="mt-3">By offering both single-channel and dual-channel printing modes, the WJ51C provides a flexible balance between speed and productivity. Whether you are working on rapid design validation or small-batch production, you can adjust your workflow to match your business needs without switching machines.</p>
                             </div>
                         </div>
                     </div>
+                    <!-- Card 2 -->
                     <div class="col-12 col-lg-3">
                         <div class="card border-bottom border-0 rounded-0">
                             <div class="col-12 mx-auto d-flex justify-content-between">
-                                <img src="images/weapon.jpg" class="w-100" alt="icon-1">
+                                <img src="images/wj51c_3d_printer_picture_11.webp" class="w-100" alt="Best Desktop Wax Printer">
                             </div>
                             <div class="card-body px-0">
-                                <h6 class="card-title">Bringing SolidForge home, and welcoming Thangs — Marleen Vogelaar and Jules Witte explain more about how and why</h6>
-                                <p class="icon-link icon-link-hover mt-3">
-                                    Defense Tools Manufacturing 
-                                    <svg class="bi" aria-hidden="true" viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>right-arrow</title> <desc>Created with Sketch.</desc> <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ui-gambling-website-lined-icnos-casinoshunter" transform="translate(-212.000000, -159.000000)" fill="#252528" fill-rule="nonzero"> <g id="square-filled" transform="translate(50.000000, 120.000000)"> <path d="M187.108012,39.2902857 L197.649804,49.7417043 L197.708994,49.7959169 C197.889141,49.9745543 197.986143,50.2044182 198,50.4382227 L198,50.5617773 C197.986143,50.7955818 197.889141,51.0254457 197.708994,51.2040831 L197.6571,51.2479803 L187.108012,61.7097143 C186.717694,62.0967619 186.084865,62.0967619 185.694547,61.7097143 C185.30423,61.3226668 185.30423,60.6951387 185.694547,60.3080911 L194.702666,51.3738496 L162.99947,51.3746291 C162.447478,51.3746291 162,50.9308997 162,50.3835318 C162,49.8361639 162.447478,49.3924345 162.99947,49.3924345 L194.46779,49.3916551 L185.694547,40.6919089 C185.30423,40.3048613 185.30423,39.6773332 185.694547,39.2902857 C186.084865,38.9032381 186.717694,38.9032381 187.108012,39.2902857 Z M197.115357,50.382693 L186.401279,61.0089027 L197.002151,50.5002046 L197.002252,50.4963719 L196.943142,50.442585 L196.882737,50.382693 L197.115357,50.382693 Z" id="right-arrow"> </path> </g> </g> </g> </g></svg>
-                                </p>
+                                <h6 class="card-title fw-bold">2026 Best Desktop Wax 3D Printer for Jewelry Designers</h6>
+                                <p class="mt-3">The positioning of the WJ51C is clear: a desktop-sized machine with industrial-level precision, designed for rapid prototyping and high-frequency iteration. It is especially suitable for small workshops and design studios that require flexibility and speed.</p>
                             </div>
                         </div>
                     </div>
+                    <!-- Card 3 -->
                     <div class="col-12 col-lg-3">
                         <div class="card border-bottom border-0 rounded-0">
                             <div class="col-12 mx-auto d-flex justify-content-between">
-                                <img src="images/dental.jpg" class="w-100" alt="icon-1">
+                                <img src="images/red_wax_mold_1.webp" class="w-100" alt="Resolution in 3D Printing">
                             </div>
                             <div class="card-body px-0">
-                                <h6 class="card-title">Bringing SolidForge home, and welcoming Thangs — Marleen Vogelaar and Jules Witte explain more about how and why</h6>
-                                <p class="icon-link icon-link-hover mt-3">
-                                    Dental Instruments Manufacting 
-                                    <svg class="bi" aria-hidden="true" viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>right-arrow</title> <desc>Created with Sketch.</desc> <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ui-gambling-website-lined-icnos-casinoshunter" transform="translate(-212.000000, -159.000000)" fill="#252528" fill-rule="nonzero"> <g id="square-filled" transform="translate(50.000000, 120.000000)"> <path d="M187.108012,39.2902857 L197.649804,49.7417043 L197.708994,49.7959169 C197.889141,49.9745543 197.986143,50.2044182 198,50.4382227 L198,50.5617773 C197.986143,50.7955818 197.889141,51.0254457 197.708994,51.2040831 L197.6571,51.2479803 L187.108012,61.7097143 C186.717694,62.0967619 186.084865,62.0967619 185.694547,61.7097143 C185.30423,61.3226668 185.30423,60.6951387 185.694547,60.3080911 L194.702666,51.3738496 L162.99947,51.3746291 C162.447478,51.3746291 162,50.9308997 162,50.3835318 C162,49.8361639 162.447478,49.3924345 162.99947,49.3924345 L194.46779,49.3916551 L185.694547,40.6919089 C185.30423,40.3048613 185.30423,39.6773332 185.694547,39.2902857 C186.084865,38.9032381 186.717694,38.9032381 187.108012,39.2902857 Z M197.115357,50.382693 L186.401279,61.0089027 L197.002151,50.5002046 L197.002252,50.4963719 L196.943142,50.442585 L196.882737,50.382693 L197.115357,50.382693 Z" id="right-arrow"> </path> </g> </g> </g> </g></svg>
-                                </p>
+                                <h6 class="card-title fw-bold">Resolution Isn’t Everything in WaxJet 3D Printing</h6>
+                                <p class="mt-3">In industries such as jewelry manufacturing, precision casting, medical devices, and art reproduction, wax pattern quality directly impacts the final product. Surface finish, dimensional accuracy, and fine-detail reproduction all play a critical role in casting success. Many users assume that a high-resolution 3D printer automatically guarantees smooth surfaces and sharp details. In reality, high resolution alone does not ensure high-quality wax patterns.</p>
                             </div>
                         </div>
                     </div>
+                    <!-- Card 4 -->
                     <div class="col-12 col-lg-3">
                         <div class="card border-bottom border-0 rounded-0">
                             <div class="col-12 mx-auto d-flex justify-content-between">
-                                <img src="images/health.jpg" class="w-100" alt="icon-1">
+                                <img src="images/wj530_wax_3d_printer_with_jewelry.webp" class="w-100" alt="DPI in Wax 3D Printing">
                             </div>
                             <div class="card-body px-0">
-                                <h6 class="card-title">Bringing SolidForge home, and welcoming Thangs — Marleen Vogelaar and Jules Witte explain more about how and why</h6>
-                                <p class="icon-link icon-link-hover mt-3">
-                                    Health Machinery Manifacturing
-                                    <svg class="bi" aria-hidden="true" viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>right-arrow</title> <desc>Created with Sketch.</desc> <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ui-gambling-website-lined-icnos-casinoshunter" transform="translate(-212.000000, -159.000000)" fill="#252528" fill-rule="nonzero"> <g id="square-filled" transform="translate(50.000000, 120.000000)"> <path d="M187.108012,39.2902857 L197.649804,49.7417043 L197.708994,49.7959169 C197.889141,49.9745543 197.986143,50.2044182 198,50.4382227 L198,50.5617773 C197.986143,50.7955818 197.889141,51.0254457 197.708994,51.2040831 L197.6571,51.2479803 L187.108012,61.7097143 C186.717694,62.0967619 186.084865,62.0967619 185.694547,61.7097143 C185.30423,61.3226668 185.30423,60.6951387 185.694547,60.3080911 L194.702666,51.3738496 L162.99947,51.3746291 C162.447478,51.3746291 162,50.9308997 162,50.3835318 C162,49.8361639 162.447478,49.3924345 162.99947,49.3924345 L194.46779,49.3916551 L185.694547,40.6919089 C185.30423,40.3048613 185.30423,39.6773332 185.694547,39.2902857 C186.084865,38.9032381 186.717694,38.9032381 187.108012,39.2902857 Z M197.115357,50.382693 L186.401279,61.0089027 L197.002151,50.5002046 L197.002252,50.4963719 L196.943142,50.442585 L196.882737,50.382693 L197.115357,50.382693 Z" id="right-arrow"> </path> </g> </g> </g> </g></svg>
-                                </p>
+                                <h6 class="card-title fw-bold">What Does 2900 × 2900 × 1700 DPI Mean in Wax 3D Printing?</h6>
+                                <p class="mt-3">Flashforge wax 3D printers are known for their high-precision industrial-grade performance. One of the most important specifications in these machines is resolution. For example, the WJ530 wax 3D printer lists its resolution as 2900 × 2900 × 1700 dpi, which is significantly higher than many other wax printing systems on the market.</p>
                             </div>
                         </div>
                     </div>

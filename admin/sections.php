@@ -192,7 +192,7 @@ if ($action === 'edit') {
                                 // Ensure all possible keys exist so Alpine can track them
                                 const defaults = {
                                     title: "", subtitle: "", bg_image: "", product_image: "", 
-                                    video_url: "", button_text: "Watch Video", 
+                                    video_url: "", button_text: "Watch Video", show_quotation: true, show_register: true,
                                     cards: [], tabs: [], specs: [], stats: [], columns: [],
                                     layout: "left", bg_type: "solid", card_title: "", card_image: "", footer_text: ""
                                 };
@@ -272,7 +272,13 @@ if ($action === 'edit') {
                                                     <input type="text" class="form-control" x-model="content.product_image" placeholder="images/waxjet.png">
                                                     <button class="btn btn-outline-warning" type="button" @click="openPicker(content, 'product_image')"><i class="bi bi-folder2-open"></i></button>
                                                 </div>
-                                                <small class="text-muted">Use a transparent PNG for best results.</small>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" class="form-check-input" id="show_quotation" x-model="content.show_quotation">
+                                                <label class="form-check-label" for="show_quotation">Show "Get a Quotation" Button</label>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" class="form-check-input" id="show_register" x-model="content.show_register">
+                                                <label class="form-check-label" for="show_register">Show "Register for Access" Button</label>
                                             </div>
                                         </div>
                                     </template>
@@ -314,7 +320,7 @@ if ($action === 'edit') {
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Columns (comma separated)</label>
-                                                <input type="text" class="form-control" :value="content.columns ? content.columns.join(',') : ''" @input="content.columns = $event.target.value.split(',')">
+                                                <input type="text" class="form-control" :value="content.columns ? content.columns.join(',') : ''" @input="content.columns = $event.target.value.split(','); content.rows = content.rows.map(r => Array.from({length: content.columns.length}, (_, i) => r[i] || ''))">
                                             </div>
                                             <label class="form-label">Rows</label>
                                             <div class="table-responsive">
