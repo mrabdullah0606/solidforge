@@ -2,9 +2,10 @@
 <?php
 /**
  * @var array $content JSON decoded section content
- * Expected keys: title, subtitle, bg_image, product_image, text_color
+ * Expected keys: title, subtitle, bg_image, product_image, text_color, video_url
  */
 $bgImage = $content['bg_image'] ?? '';
+$videoUrl = $content['video_url'] ?? '';
 $productImage = $content['product_image'] ?? '';
 $title = $content['title'] ?? '';
 $subtitle = $content['subtitle'] ?? '';
@@ -13,6 +14,22 @@ $titleColor = $content['title_color'] ?? 'warning';
 $showQuotation = isset($content['show_quotation']) ? $content['show_quotation'] : true;
 $showRegister = isset($content['show_register']) ? $content['show_register'] : true;
 ?>
+<?php if($videoUrl): ?>
+<section
+  class="min-vh-100 d-flex flex-column align-items-center justify-content-start text-<?php echo $textColor; ?> text-center position-relative overflow-hidden"
+  style="padding-top: 120px;"
+>
+  <!-- Background Video -->
+  <video class="position-absolute top-50 start-50 translate-middle w-100 h-100"
+         style="object-fit: cover; z-index: 0;"
+         poster="<?php echo $bgImage; ?>"
+         autoplay muted loop playsinline>
+      <source src="<?php echo $videoUrl; ?>" type="video/mp4">
+  </video>
+  
+  <!-- Overlay Gradient to match the original image gradient -->
+  <div class="position-absolute w-100 h-100 top-0 start-0" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)); z-index: 1; pointer-events: none;"></div>
+<?php else: ?>
 <section
   class="min-vh-100 d-flex flex-column align-items-center justify-content-start text-<?php echo $textColor; ?> text-center position-relative overflow-hidden"
   style="
@@ -21,8 +38,10 @@ $showRegister = isset($content['show_register']) ? $content['show_register'] : t
     padding-top: 120px;
   "
 >
+<?php endif; ?>
+
   <!-- Background Effects -->
-  <div class="position-absolute w-100 h-100 top-0 start-0" style="background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.8) 100%); pointer-events: none;"></div>
+  <div class="position-absolute w-100 h-100 top-0 start-0" style="background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.8) 100%); pointer-events: none; z-index: 1;"></div>
 
   <div class="container position-relative" style="z-index: 2;">
     <h1 class="display-3 fw-bold text-<?php echo $titleColor; ?> mb-3" style="text-shadow: 0 4px 20px rgba(0,0,0,0.6);">

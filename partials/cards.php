@@ -26,7 +26,13 @@ $cards = $content['cards'] ?? [];
       <?php foreach($cards as $card): ?>
       <div class="col-md-6 mb-4">
         <div class="card text-white h-100 border-0 bg-transparent text-start">
-          <?php if(!empty($card['image'])): ?>
+          <?php if(!empty($card['video_url'])): ?>
+          <video
+            src="<?php echo $card['video_url']; ?>"
+            class="card-img-top mt-3 mb-3"
+            autoplay muted loop playsinline
+          ></video>
+          <?php elseif(!empty($card['image'])): ?>
           <img
             src="<?php echo $card['image']; ?>"
             class="card-img-top mt-3 mb-3"

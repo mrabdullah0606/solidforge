@@ -201,7 +201,7 @@ if ($action === 'edit') {
                                 this.$watch("type", val => {
                                     // Only reset if it looks like we are switching a brand new, empty section
                                     if(!this.content.title && !this.content.bg_image && this.content.cards.length === 0) {
-                                      if(val === "cards") this.content.cards = [{title: "", text: "", image: ""}];
+                                      if(val === "cards") this.content.cards = [{title: "", text: "", image: "", video_url: ""}];
                                       if(val === "specs") { this.content.columns = ["Param","Value"]; this.content.rows = [["",""]]; }
                                       if(val === "tabs") { this.content.tabs = [{title: "Tab 1", content: ""}]; }
                                       if(val === "stats_grid") { this.content.stats = [{value: "100%", label: "Description here"}]; }
@@ -261,9 +261,14 @@ if ($action === 'edit') {
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Background Image</label>
-                                                <div class="input-group">
+                                                <div class="input-group mb-2">
                                                     <input type="text" class="form-control" x-model="content.bg_image" placeholder="images/hero-bg.jpg">
                                                     <button class="btn btn-outline-warning" type="button" @click="openPicker(content, 'bg_image')"><i class="bi bi-folder2-open"></i></button>
+                                                </div>
+                                                <label class="form-label">Background Video URL (Overrides Image)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" x-model="content.video_url" placeholder="uploads/media/hero-bg.mp4">
+                                                    <button class="btn btn-outline-warning" type="button" @click="openPicker(content, 'video_url')"><i class="bi bi-folder2-open"></i></button>
                                                 </div>
                                             </div>
                                             <div class="mb-3">
@@ -299,13 +304,23 @@ if ($action === 'edit') {
                                                     </div>
                                                     <input type="text" class="form-control mb-2" x-model="card.title" placeholder="Card Title">
                                                     <textarea class="form-control mb-2" x-model="card.text" placeholder="Card Description"></textarea>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" x-model="card.image" placeholder="Image Path">
-                                                        <button class="btn btn-outline-warning" type="button" @click="openPicker(content.cards[index], 'image')"><i class="bi bi-folder2-open"></i></button>
+                                                    <div class="row g-2">
+                                                        <div class="col-6">
+                                                            <div class="input-group input-group-sm">
+                                                                <input type="text" class="form-control" x-model="card.image" placeholder="Image Path">
+                                                                <button class="btn btn-outline-warning" type="button" @click="openPicker(content.cards[index], 'image')"><i class="bi bi-folder2-open"></i></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="input-group input-group-sm">
+                                                                <input type="text" class="form-control" x-model="card.video_url" placeholder="Video URL">
+                                                                <button class="btn btn-outline-warning" type="button" @click="openPicker(content.cards[index], 'video_url')"><i class="bi bi-folder2-open"></i></button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </template>
-                                            <button type="button" class="btn btn-add btn-sm" @click="content.cards.push({title:'', text:'', image:''})">
+                                            <button type="button" class="btn btn-add btn-sm" @click="content.cards.push({title:'', text:'', image:'', video_url:''})">
                                                 <i class="bi bi-plus-circle me-1"></i> Add Another Card
                                             </button>
                                         </div>

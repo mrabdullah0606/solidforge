@@ -14,22 +14,22 @@ $buttonText = $content['button_text'] ?? 'Watch Video';
          x-data="{ playing: false }"
          style="min-height: 85vh; background-color: #000;">
     
-    <!-- Background Video (Hidden until playing) -->
+    <!-- Background Video (Autoplays silently) -->
     <video x-ref="videoPlayer"
            class="position-absolute top-50 start-50 translate-middle w-100 h-100"
-           style="object-fit: cover; z-index: 0; transition: opacity 1s ease-in-out;"
-           :style="playing ? 'opacity: 1;' : 'opacity: 0;'"
-           loop>
+           style="object-fit: cover; z-index: 0;"
+           poster="<?php echo $poster; ?>"
+           autoplay muted loop playsinline>
         <source src="<?php echo $videoUrl; ?>" type="video/mp4">
     </video>
 
-    <!-- Poster / Overlay (Visible until playing) -->
+    <!-- Dark Overlay (Visible until 'Watch Video' is clicked to unmute and focus) -->
     <div x-show="!playing" 
          x-transition:leave="transition ease-in duration-800"
          x-transition:leave-start="opacity-100"
          x-transition:leave-end="opacity-0"
          class="position-absolute top-0 start-0 w-100 h-100"
-         style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<?php echo $poster; ?>') no-repeat center center; background-size: cover; z-index: 2;">
+         style="background: rgba(0,0,0,0.6); z-index: 2;">
     </div>
 
     <!-- Content Overlay -->
@@ -48,9 +48,9 @@ $buttonText = $content['button_text'] ?? 'Watch Video';
             </button>
         </div>
 
-        <!-- Exit Button / Pause (Optional - shows when playing) -->
+        <!-- Exit Button / Mute (Shows when playing) -->
         <button x-show="playing" 
-                @click="playing = false; $refs.videoPlayer.pause()"
+                @click="playing = false; $refs.videoPlayer.muted = true;"
                 class="btn btn-sm btn-outline-light position-absolute bottom-0 mb-4 opacity-50 hover-opacity-100">
             Stop Video
         </button>
