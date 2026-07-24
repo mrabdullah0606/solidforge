@@ -116,11 +116,11 @@ $navBrands = getBrandsWithProducts($pdo);
                     </a>
                 </li>
 
-                <li class="nav-item dropdown hover-dropdown">
+                <!-- <li class="nav-item dropdown hover-dropdown">
                     <a class="nav-link text-warning" href="second-life.php">
                         Second life
                     </a>
-                </li>
+                </li> -->
 
                 <li class="nav-item dropdown hover-dropdown">
                     <a class="nav-link text-warning" href="support.php">

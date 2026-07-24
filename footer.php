@@ -26,7 +26,6 @@
                     <p class="text-warning">Products</p>
                     <p class="text-warning">3D Printers</p>
                     <p class="text-warning">Polishing Systems</p>
-                    <p class="text-warning">Design Software</p>
                 </div>
             </div>
             <div class="col-12 mx-auto text-center col-lg-4">

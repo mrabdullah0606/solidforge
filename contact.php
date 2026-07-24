@@ -439,7 +439,7 @@ textarea.form-control {
                                     <div class="timeline-heading">Submit</div>
                                     <div class="timeline-content">
                                         <!-- <h4>Attendi la nostra chiamata</h4> -->
-                                        <p class="fw-medium text-white">Submit your request</p>
+                                        <p class="fw-medium text-white">Send Message</p>
                                     </div>
                                 </div>
                                 <div class="timeline-item">
@@ -448,15 +448,6 @@ textarea.form-control {
                                         <!-- <h4>Collegati il giorno dell'appuntamento</h4> -->
                                         <p class="text-white fw-medium">We will contact you soon to confirm the appointment.</p>
                                     </div>
-                                </div>
-                                <div class="timeline-item">
-                                  <div class="timeline-heading">Click The link</div>
-                                  <div class="timeline-content">
-                                      <!-- <h4>Attendi la nostra chiamata</h4> -->
-                                      <p class="text-white fw-medium">On the day of your appointment, click the link in your email at the scheduled time. 
-                                        No additional software is needed.
-                                        </p>
-                                  </div>
                                 </div>
                               </div>
                               <div class="custom-timeline d-block d-md-none">
@@ -480,7 +471,7 @@ textarea.form-control {
                                     <!-- <h6 class="custom-timeline-heading">2. Contact</h6> -->
                                     <div class="custom-timeline-content">
                                         <!-- <h5>Wait for our call</h5> -->
-                                        <p class="text-white fw-medium">Submit your request</p>
+                                        <p class="text-white fw-medium">Send Message</p>
                                     </div>
                                 </div>
                         
@@ -494,17 +485,6 @@ textarea.form-control {
                                         <!-- <h5>Connect on the day of the appointment</h5> -->
                                         <p class="text-white fw-medium">We will contact you soon to confirm the appointment.</p>
                                     </div>
-                                </div>
-                                <!-- step 4 -->
-                                <div class="custom-timeline-step custom-right">
-                                  <div class="custom-timeline-icon">
-                                      <!-- <img src="https://img.icons8.com/ios/24/007bff/phone.png" alt="Contact"> -->
-                                  </div>
-                                  <!-- <h6 class="custom-timeline-heading">2. Contact</h6> -->
-                                  <div class="custom-timeline-content">
-                                      <h5>Wait for our call</h5>
-                                      <p>On the day of your appointment, click the link in your email at the scheduled time. No additional software is </p>
-                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -550,11 +530,7 @@ textarea.form-control {
                                                 <input class="form-check-input" type="checkbox" name="technology[]" id="tech_polishing" value="Polishing">
                                                 <label class="form-check-label" for="tech_polishing">Polishing</label>
                                               </div>
-                                              <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="technology[]" id="tech_design_software" value="Design Software">
-                                                <label class="form-check-label" for="tech_design_software">Design Software</label>
                                               </div>
-                                            </div>
 
                                           </div>
                                           <!-- Second Column -->
@@ -575,19 +551,7 @@ textarea.form-control {
                                               <label>Preferred Contact Time:</label>
                                               <input type="time" class="form-control" name="contact_time" id="contact_time">
                                             </div>
-                                            <div class="form-group">
-                                              <label>Select Preferred Communication App:</label>
-                                              <select class="form-control custominput" name="communication_app" id="communication_app">
-                                                <option value="">Select Choice</option>
-                                                <option value="WhatsApp">WhatsApp</option>
-                                                <option value="Teams">Teams</option>
-                                              </select>
                                             </div>
-                                            <div id="whatsappInput" class="form-group" style="display: none;">
-                                              <label>WhatsApp Number:</label>
-                                              <input type="text" class="form-control" name="whatsapp_number" id="whatsapp_number" placeholder="Enter WhatsApp Number">
-                                            </div>
-                                          </div>
                                         </div>
                                         <div class="row mt-5">
                                           <div class="col-md-12 text-center">
@@ -597,16 +561,7 @@ textarea.form-control {
                                       </div>
                                     </form>
 
-                                    <script>
-                                      document.getElementById("communication_app").addEventListener("change", function() {
-                                        var selectedValue = this.value;
-                                        if (selectedValue === "WhatsApp") {
-                                          document.getElementById("whatsappInput").style.display = "block";
-                                        } else {
-                                          document.getElementById("whatsappInput").style.display = "none";
-                                        }
-                                      });
-                                    </script>
+
 
                                    <!--  <form method="POST" id="contactForm" name="contactForm" class="contactForm">
                                         <div class="row">
@@ -666,17 +621,13 @@ textarea.form-control {
                     </div>
                 </div>
                 <div class="col-12 mx-auto col-lg-4">
-                    <div class="text text-warning ms-6">
-                     <div><span class="text-warning fw-bold fs-5">+357 9595 2316</span></div>
-                     <div class="mt-2"><span class="text-warning fw-bold fs-5">info@solidforgeltd.com</span></div>
-                  </div>
+                    <!-- Removed as requested -->
                 </div>
                 <div class="col-12 mx-auto col-lg-4">
                     <div class="text text-warning ms-5">
-                        <p class="mb-0">
-                            <div class="text-center">Working Days/Hours:</div>
-                            <div class="text-center">Monday-Friday 8:00am-6:00pm</div>
-                        </p>
+                        <div>Phone: +357 9595 2316</div>
+                        <div>WhatsApp: +357 9595 2316</div>
+                        <div>Email: info@solidforgeltd.com</div>
                     </div>
                 </div>
                <!--  <div class="col-12 mx-auto text-center col-lg-2">

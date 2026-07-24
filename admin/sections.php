@@ -162,6 +162,7 @@ if ($action === 'edit') {
                                         if($s['type'] === 'hero') echo "<strong>Banner:</strong> " . htmlspecialchars($c['title'] ?? 'Untitled');
                                         elseif($s['type'] === 'cards') echo "<strong>Cards:</strong> " . count($c['cards'] ?? []) . " items - " . htmlspecialchars($c['title'] ?? '');
                                         elseif($s['type'] === 'specs') echo "<strong>Table:</strong> " . count($c['rows'] ?? []) . " rows - " . htmlspecialchars($c['title'] ?? '');
+                                        elseif($s['type'] === 'rich_text') echo "<strong>Rich Text:</strong> " . htmlspecialchars(substr(strip_tags($c['html_content'] ?? ''), 0, 80)) . "...";
                                         else echo "<strong>Content:</strong> " . htmlspecialchars(substr(json_encode($c), 0, 80)) . "...";
                                         ?>
                                     </div>
@@ -186,15 +187,16 @@ if ($action === 'edit') {
                     ?>
                     <div class="col-md-4" 
                          x-data='{ 
-                            type: <?php echo json_encode($initialType); ?>,
-                            content: <?php echo json_encode($initialContent); ?>,
+                            type: <?php echo json_encode($initialType, JSON_HEX_APOS | JSON_HEX_QUOT); ?>,
+                            content: <?php echo json_encode($initialContent, JSON_HEX_APOS | JSON_HEX_QUOT); ?>,
                             init() {
                                 // Ensure all possible keys exist so Alpine can track them
                                 const defaults = {
                                     title: "", subtitle: "", bg_image: "", product_image: "", 
                                     video_url: "", button_text: "Watch Video", show_quotation: true, show_register: true,
                                     cards: [], tabs: [], specs: [], stats: [], columns: [],
-                                    layout: "left", bg_type: "solid", card_title: "", card_image: "", footer_text: ""
+                                    layout: "left", bg_type: "solid", card_title: "", card_image: "", footer_text: "",
+                                    html_content: "", bg_color: "#ffffff", text_color: "#3b3b3b"
                                 };
                                 this.content = { ...defaults, ...this.content };
 
@@ -207,6 +209,7 @@ if ($action === 'edit') {
                                       if(val === "stats_grid") { this.content.stats = [{value: "100%", label: "Description here"}]; }
                                       if(val === "text_grid") { this.content.columns = [{title: "Feature", text: "Description here"}]; }
                                       if(val === "comparison_card") { this.content.specs = [{label: "Specification", value: "Value here"}]; }
+                                      if(val === "rich_text") { this.content.html_content = ""; this.content.bg_color = "#ffffff"; this.content.text_color = "#3b3b3b"; }
                                     }
                                 });
                             },
@@ -236,6 +239,7 @@ if ($action === 'edit') {
                                         <option value="specs">Technical Specs Table</option>
                                         <option value="video_banner">Video Banner</option>
                                         <option value="tabs">Tabbed Content</option>
+                                        <option value="rich_text">Rich Text / HTML Content</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
@@ -247,6 +251,25 @@ if ($action === 'edit') {
 
                                 <!-- VISUAL FIELDS SECTION -->
                                 <div id="visual-fields">
+                                    
+                                    <!-- RICH TEXT FIELDS -->
+                                    <template x-if="type === 'rich_text'">
+                                        <div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Background Color</label>
+                                                <input type="color" class="form-control form-control-color" x-model="content.bg_color" title="Choose your color">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Text Color</label>
+                                                <input type="color" class="form-control form-control-color" x-model="content.text_color" title="Choose your color">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Rich HTML Content</label>
+                                                <div class="form-text mb-2 text-info">You can use standard HTML tags here such as &lt;br&gt; for line breaks, &lt;b&gt; for bold, &lt;p&gt; for paragraphs, and &lt;span style="color: blue;"&gt; for colored text.</div>
+                                                <textarea class="form-control text-monospace" rows="12" x-model="content.html_content" placeholder="<h2 style='color: #005a84;'>Title</h2><p>Your paragraph text...</p>"></textarea>
+                                            </div>
+                                        </div>
+                                    </template>
                                     
                                     <!-- HERO FIELDS -->
                                     <template x-if="type === 'hero'">
